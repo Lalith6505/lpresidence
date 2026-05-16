@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MWW44WR4TY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MWW44WR4TY');
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Booking &amp; Contact – LP Residence Kottawa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact LP Residence homestay in Kottawa, Sri Lanka. Check availability, pay a USD 10 booking deposit by PayPal, and find our location on Google Maps.">
+<meta property="og:title" content="LP Residence Kottawa">
+<meta property="og:description" content="Family-run homestay in Sri Lanka">
+<meta property="og:image" content="index.jpg">
+<meta property="og:type" content="website">
+  <style>
+    :root {
+      --bg: #020617;
+      --accent: #f97316;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: rgba(15,23,42,0.96);
+      --border: rgba(148,163,184,0.32);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 24px 60px rgba(15,23,42,0.9);
+    }
+
+    * { box-sizing: border-box; }
+
+        body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(249,115,22,0.08), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(56,189,248,0.06), transparent 30%),
+    var(--bg);
+}
+    html {
+  scroll-behavior: smooth;
+}
+.room-card,
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.hero-card,
+.feature-card {
+  transition: all 0.28s ease;
+}
+
+.room-card:hover,
+.gallery-item:hover,
+.hero-card:hover,
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 40;
+      backdrop-filter: blur(20px);
+      background: linear-gradient(to right, rgba(15,23,42,0.9), rgba(15,23,42,0.88));
+      border-bottom: 1px solid rgba(148,163,184,0.18);
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      overflow: hidden;
+      box-shadow: 0 0 0 2px rgba(148,163,184,0.7);
+      flex-shrink: 0;
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .brand-text-title {
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand-text-sub {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 3px;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(to right, #f97316, #facc15);
+      transition: width 0.18s ease-out;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: linear-gradient(to right, #f97316, #facc15);
+      color: #111827;
+      font-weight: 600;
+      border: none;
+      text-decoration: none;
+      font-size: 0.85rem;
+      box-shadow: 0 10px 30px rgba(249,115,22,0.6);
+      white-space: nowrap;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 82px 16px 90px;
+    }
+
+    /* HERO – uses contact.jpg */
+    .hero-shell {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 22px;
+    }
+
+    .hero-bg {
+      filter: brightness(1.05) contrast(1.08) saturate(1.1);
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to bottom, rgba(15,23,42,0.3), rgba(15,23,42,0.92)),
+        url("contact.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: scale(1.02);
+    }
+
+    .hero-overlay {
+      position: relative;
+      z-index: 1;
+      padding: 22px 20px 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 18px;
+      color: #e5e7eb;
+    }
+
+    .hero-heading {
+      font-size: 1.9rem;
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      margin: 0 0 6px 0;
+    }
+
+    .hero-heading span {
+      background: linear-gradient(to right, #f97316, #facc15);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 0.96rem;
+      margin: 0 0 7px 0;
+      max-width: 520px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: rgba(15,23,42,0.65);
+      color: #e5e7eb;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 6px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 15px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      border: 1px solid transparent;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background 0.12s ease-out, color 0.12s ease-out, border-color 0.12s ease-out;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, #f97316, #facc15);
+      color: #111827;
+      box-shadow: 0 12px 32px rgba(249,115,22,0.7);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 36px rgba(249,115,22,0.8);
+    }
+
+    .btn-outline {
+      background: rgba(15,23,42,0.35);
+      color: #e5e7eb;
+      border-color: rgba(148,163,184,0.7);
+    }
+
+    .btn-outline:hover {
+      border-color: #f97316;
+      background: rgba(15,23,42,0.8);
+    }
+
+    .btn-paypal {
+      background: #0070ba;
+      color: #e5e7eb;
+      box-shadow: 0 12px 32px rgba(0,112,186,0.75);
+    }
+
+    .btn-paypal:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(0,112,186,0.85);
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: #d1d5db;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.26), transparent 60%), var(--card);
+      border-radius: 16px;
+      padding: 13px 13px 11px;
+      border: 1px solid rgba(148,163,184,0.55);
+      font-size: 0.86rem;
+      box-shadow: 0 18px 46px rgba(15,23,42,0.95);
+    }
+
+    .hero-card h3 {
+      margin: 0 0 5px 0;
+      font-size: 0.95rem;
+    }
+
+    .hero-card p {
+      margin: 0;
+      color: #cbd5f5;
+    }
+
+    /* TRUST STRIP */
+    .trust-strip {
+      margin: 0 auto 20px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 0 0, rgba(34,197,94,0.18), transparent 60%), #020617;
+      border: 1px solid rgba(148,163,184,0.5);
+      padding: 6px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.82rem;
+      box-shadow: 0 12px 32px rgba(15,23,42,0.85);
+      flex-wrap: wrap;
+    }
+
+    .trust-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .trust-score-main {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #facc15;
+    }
+
+    .trust-score-stars {
+      color: #facc15;
+      font-size: 0.9rem;
+    }
+
+    .trust-right {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: flex-end;
+    }
+
+    .trust-chip {
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.6);
+      font-size: 0.76rem;
+      color: #e5e7eb;
+      white-space: nowrap;
+    }
+
+    main .section {
+      margin-bottom: 24px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .section-lead {
+      font-size: 0.92rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 12px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+
+    .step {
+      background: var(--card);
+      border-radius: var(--radius-md);
+      padding: 12px 12px 10px;
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 34px rgba(15,23,42,0.95);
+      font-size: 0.88rem;
+    }
+
+    .step-number {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #f97316;
+      margin-bottom: 4px;
+    }
+
+    .step h3 {
+      margin: 0 0 4px 0;
+      font-size: 0.98rem;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .note, .terms {
+      background: rgba(15,23,42,0.98);
+      border-radius: var(--radius-md);
+      padding: 11px 12px 9px;
+      border: 1px solid rgba(148,163,184,0.35);
+      box-shadow: 0 14px 34px rgba(15,23,42,0.95);
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .note ul, .terms ul {
+      margin: 6px 0 0;
+      padding-left: 18px;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-md);
+      padding: 13px 13px 11px;
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 34px rgba(15,23,42,0.95);
+      font-size: 0.9rem;
+    }
+
+    .card h3 {
+      margin: 0 0 6px 0;
+      font-size: 1rem;
+    }
+
+    label {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 7px 8px;
+      margin-top: 4px;
+      border-radius: 7px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: #020617;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.86rem;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #f97316;
+      box-shadow: 0 0 0 1px rgba(249,115,22,0.5);
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: linear-gradient(to right, #f97316, #facc15);
+      color: #111827;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 28px rgba(249,115,22,0.6);
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 36px rgba(249,115,22,0.75);
+    }
+
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+      font-size: 0.85rem;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .social-link span.symbol {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      border-radius: var(--radius-md);
+      box-shadow: 0 12px 32px rgba(15,23,42,0.95);
+    }
+
+    .payment-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .btn-paypal-inline {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: #0070ba;
+      color: #e5e7eb;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 28px rgba(0,112,186,0.7);
+    }
+
+    .sticky-bar {
+      display: none;
+    } 
+   
+      @media (max-width: 900px) {
+      .hero-overlay {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .steps {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .columns {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .payment-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .map-container iframe {
+        height: 260px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        position: sticky;
+      }
+      .nav-inner {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      nav {
+        width: 100%;
+        justify-content: flex-end;
+      }
+      main {
+        padding-top: 76px;
+        padding-bottom: 86px;
+      }
+      .sticky-bar {
+        display: flex;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(15,23,42,0.97);
+        padding: 8px 10px;
+        gap: 8px;
+        justify-content: space-between;
+        z-index: 50;
+      }
+      .sticky-bar a {
+        flex: 1;
+        text-align: center;
+        padding: 8px 10px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.85rem;
+        color: #111827;
+        background: #f9fafb;
+      }
+    }
+  </style>
+</head>
+<a href="https://wa.me/94777210775"
+class="whatsapp-float">
+  WhatsApp
+</a>
+<body>
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="Logo.jpg" alt="LP Residence logo">
+        </div>
+        <div>
+          <div class="brand-text-title">LP Residence</div>
+          <div class="brand-text-sub">Booking &amp; Contact</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="rooms.html">Rooms &amp; Gallery</a>
+        <a href="contact.html">Booking &amp; Contact</a>
+        <a href="#booking" class="nav-cta">Check dates</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero-shell">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay">
+        <div>
+          <h1 class="hero-heading">
+            <span>Book your stay</span><br>
+            at LP Residence in Kottawa
+          </h1>
+          <p class="hero-sub">
+            Share your dates and guest details and we will confirm availability, total price and any extras such as meals or airport pickup before you pay the small booking deposit.
+          </p>
+          <div class="hero-badges">
+            <span class="badge">Secure USD 10 deposit via PayPal</span>
+            <span class="badge">Balance paid at check‑in</span>
+            <span class="badge">Flexible check‑in where possible</span>
+          </div>
+          <div class="hero-buttons">
+            <a href="#booking" class="btn btn-primary">Send enquiry</a>
+            <a href="#payment" class="btn btn-paypal">Pay deposit (after confirmation)</a>
+          </div>
+          <div class="hero-note">
+            We usually reply within a few hours. For urgent enquiries, please call or WhatsApp us directly.
+          </div>
+        </div>
+        <aside class="hero-card">
+          <h3>Questions before booking?</h3>
+          <p>
+            If you are unsure about room types, transport or local facilities, feel free to ask.
+            We are happy to help you plan your stay in Kottawa and around Colombo.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section class="trust-strip">
+      <div class="trust-left">
+        <div class="trust-score-main">4.9 / 5</div>
+        <div class="trust-score-stars">★★★★★</div>
+        <div style="color:#e5e7eb;font-size:0.8rem;">Guests appreciate clear communication and simple booking.</div>
+      </div>
+      <div class="trust-right">
+        <div class="trust-chip">Secure PayPal deposit</div>
+        <div class="trust-chip">Family‑run &amp; on‑site hosts</div>
+        <div class="trust-chip">Free Wi‑Fi &amp; parking</div>
+      </div>
+    </section>
+
+    <!-- BOOKING STEPS -->
+    <section class="section" id="booking">
+      <div class="section-header">
+        <h2 class="section-title">Booking &amp; availability</h2>
+        <div class="section-kicker">Simple 3‑step process</div>
+      </div>
+      <p class="section-lead">
+        Share your travel dates, preferred room type and number of guests. We will confirm availability and then invite you to pay the
+        <strong>USD 10 booking deposit</strong> to secure your stay.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">01</div>
+          <h3>Send your details</h3>
+          <p>Use the enquiry form or WhatsApp to tell us your dates, guests and room type.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <h3>Receive confirmation</h3>
+          <p>We confirm availability, total price and any requests such as meals or airport pickup.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <h3>Pay USD 10 deposit</h3>
+          <p>Pay the booking deposit online via PayPal. You pay the balance at LP Residence during check‑in.</p>
+        </div>
+      </div>
+
+      <div class="note">
+        <strong>Current room rates</strong>
+        <ul>
+          <li>Queen Double Room with AC – 25 USD per day.</li>
+          <li>Queen Double Room non‑AC – 20 USD per day.</li>
+          <li>King Room with AC – 20 USD per day.</li>
+          <li>Large Family Room – 35 USD per day.</li>
+        </ul>
+      </div>
+
+      <div class="terms">
+        <strong>Booking terms</strong>
+        <ul>
+          <li>Initial booking deposit: 10 USD per room (non‑refundable).</li>
+          <li>Balance is payable in cash at LP Residence during check‑in.</li>
+          <li>Standard check‑in from 2:00 PM and check‑out by 11:00 AM (flexible when possible).</li>
+          <li>Government‑issued ID or passport is required for all adult guests at check‑in.</li>
+          <li>Please let us know early if your dates change; we will try to accommodate new dates.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT & ABOUT -->
+    <section class="section" id="contact">
+      <div class="section-header">
+        <h2 class="section-title">Contact &amp; about</h2>
+        <div class="section-kicker">Address · WhatsApp · Email</div>
+      </div>
+
+      <div class="columns">
+        <div class="card">
+          <h3>Address</h3>
+          <p>
+            <strong>LP Residence</strong><br>
+            62/12 Temple Road<br>
+            Kottawa, Pannipitiya<br>
+            Western Province, Sri Lanka
+          </p>
+
+          <h3>Phone &amp; WhatsApp</h3>
+          <p>
+            Sri Lanka: +94 777 210 775<br>
+            Sri Lanka: +94 717 702 621<br>
+            UK WhatsApp: +44 7848 492 779
+          </p>
+
+          <h3>Email</h3>
+          <p><a href="mailto:lmadanayake@gmail.com">lmadanayake@gmail.com</a></p>
+
+          <h3>About LP Residence</h3>
+          <p>
+            LP Residence is a family‑run guest house offering quiet, independent rooms in Kottawa town.
+            Guests enjoy free Wi‑Fi and parking, with optional meals and airport transfers arranged on request.
+          </p>
+
+          <h3>Social &amp; direct chat</h3>
+          <p>Send us a quick message or follow our updates.</p>
+
+          <div class="social-row">
+            <a class="social-link" style="background:#25D366;"
+               href="https://wa.me/94777210775" target="_blank" rel="noopener noreferrer">
+              <span class="symbol">✆</span>
+              <span>WhatsApp</span>
+            </a>
+
+            <a class="social-link" style="background:#1877F2;"
+               href="https://www.facebook.com/share/1KzhAytyEe/" target="_blank" rel="noopener noreferrer">
+              <span class="symbol">f</span>
+              <span>Facebook</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Enquiry form</h3>
+          <p>Use this form to send us a quick enquiry. “Send enquiry” will open your email app with the details filled in.</p>
+
+          <form id="enquiryForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="Name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Email" required>
+
+            <label for="phone">Phone / WhatsApp</label>
+            <input type="text" id="phone" name="Phone">
+
+            <label for="dates">Planned dates</label>
+            <input type="text" id="dates" name="Dates" placeholder="e.g. 10–15 August 2026">
+
+            <label for="guests">Number of guests</label>
+            <input type="number" id="guests" name="Guests" min="1">
+
+            <label for="message">Message</label>
+            <textarea id="message" name="Message" rows="4" placeholder="Room type, meals, airport pickup, arrival time, etc."></textarea>
+
+            <button type="submit">Send enquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAYMENT -->
+    <section class="section" id="payment">
+      <div class="section-header">
+        <h2 class="section-title">Secure online payment</h2>
+        <div class="section-kicker">USD 10 booking deposit</div>
+      </div>
+      <p class="section-lead">
+        After we confirm your booking by email or WhatsApp, please use one of the options below to pay your
+        <strong>USD 10</strong> initial booking deposit. The remaining amount is payable at LP Residence during check‑in.
+      </p>
+
+      <div class="payment-grid">
+        <div class="card">
+          <h3>Pay deposit via button</h3>
+          <p>This button allows you to pay the fixed USD 10 booking deposit securely via PayPal.</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="pmadanayake@gmail.com">
+            <input type="hidden" name="item_name" value="LP Residence Initial Booking Deposit">
+            <input type="hidden" name="amount" value="10.00">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="no_note" value="0">
+            <button type="submit">Pay USD 10 with PayPal</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>Pay deposit via link</h3>
+          <p>If you prefer, you can use our PayPal payment link instead of the button.</p>
+          <a href="https://www.paypal.com/ncp/payment/CMW4MRZGW6NJL"
+             target="_blank" rel="noopener noreferrer"
+             class="btn-paypal-inline">
+            Pay USD 10 deposit via PayPal link
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ & MAP -->
+    <section class="section" id="faqs">
+      <div class="section-header">
+        <h2 class="section-title">FAQs &amp; location</h2>
+        <div class="section-kicker">Practical details</div>
+      </div>
+
+      <div class="columns" style="grid-template-columns:minmax(0,1.1fr) minmax(0,1.1fr);">
+        <div class="card">
+          <h3>Frequently asked questions</h3>
+          <p><strong>Is breakfast included?</strong><br>
+            Breakfast is not included by default, but we can arrange meals on request for an additional charge.</p>
+
+          <p><strong>Is there parking?</strong><br>
+            Yes, free on‑site parking is available for guests.</p>
+
+          <p><strong>How far is LP Residence from Colombo?</strong><br>
+            We are located in Kottawa, with quick access to the expressway and transport links into Colombo.</p>
+
+          <p><strong>Do you offer airport pickup?</strong><br>
+            Yes, airport pickup and drop‑off can be arranged in advance. Please mention this in your enquiry.</p>
+
+          <p><strong>Can I work remotely from LP Residence?</strong><br>
+            Many guests work remotely here. We provide high‑speed Wi‑Fi and quiet rooms suitable for online work.</p>
+        </div>
+
+        <div class="card map-container">
+          <h3>Find us on Google Maps</h3>
+          <p>LP Residence is located on Temple Road in Kottawa. Use the map below to plan your route.</p>
+          <iframe
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126743.05470207008!2d79.893!3d6.842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sLP%20Residence%20Kottawa!5e0!3m2!1sen!2slk!4v1700000000000">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Mobile sticky bar -->
+  <div class="sticky-bar">
+    <a href="#booking">Enquiry</a>
+    <a href="#payment">Pay deposit</a>
+  </div>
+
+  <footer>
+    <div style="max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
+      <div>&copy; 2026 LP Residence, Kottawa, Sri Lanka.</div>
+      <div>Official site: <a href="https://lpresidence.netlify.app/">lpresidence.netlify.app</a></div>
+    </div>
+  <footer>
+  <div style="max-width:1120px;margin:auto;text-align:center;">
+    <p><strong>LP Residence</strong></p>
+    <p>Kottawa, Sri Lanka</p>
+    <p>Comfortable family-run accommodation with warm hospitality.</p>
+    <p style="margin-top:10px;">
+      <a href="index.html">Home</a> ·
+      <a href="rooms.html">Rooms</a> ·
+      <a href="contact.html">Contact</a>
+    </p>
+    <p style="margin-top:14px;font-size:0.78rem;">
+      © 2026 LP Residence. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+  <script>
+    // Simple mailto-based enquiry: opens the user's email client with filled content
+    document.getElementById('enquiryForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const dates = document.getElementById('dates').value.trim();
+      const guests = document.getElementById('guests').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      let body = '';
+      body += 'Name: ' + name + '%0D%0A';
+      body += 'Email: ' + email + '%0D%0A';
+      body += 'Phone / WhatsApp: ' + phone + '%0D%0A';
+      body += 'Planned dates: ' + dates + '%0D%0A';
+      body += 'Number of guests: ' + guests + '%0D%0A';
+      body += 'Message: ' + message + '%0D%0A';
+
+      const subject = encodeURIComponent('Booking enquiry – LP Residence');
+      const mailto = 'mailto:lmadanayake@gmail.com?subject=' + subject + '&body=' + body;
+      window.location.href = mailto;
+    });
+  </script>
+</body>
+</html>

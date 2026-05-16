@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MWW44WR4TY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MWW44WR4TY');
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Rooms &amp; Photo Gallery – LP Residence Kottawa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="See LP Residence room types, facilities and prices. Queen, King and Family rooms with access to shared living spaces, rooftop garden and free parking in Kottawa, Sri Lanka.">
+<meta property="og:title" content="LP Residence Kottawa">
+<meta property="og:description" content="Family-run homestay in Sri Lanka">
+<meta property="og:image" content="index.jpg">
+<meta property="og:type" content="website">
+  <style>
+    :root {
+      --bg: #020617;
+      --accent: #f97316;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: rgba(15,23,42,0.96);
+      --border: rgba(148,163,184,0.32);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 24px 60px rgba(15,23,42,0.9);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(249,115,22,0.08), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(56,189,248,0.06), transparent 30%),
+    var(--bg);
+}
+    html {
+  scroll-behavior: smooth;
+}
+.room-card,
+.gallery-item,
+.hero-card,
+.feature-card {
+  transition: all 0.28s ease;
+}
+
+.room-card:hover,
+.gallery-item:hover,
+.hero-card:hover,
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 40;
+      backdrop-filter: blur(20px);
+      background: linear-gradient(to right, rgba(15,23,42,0.9), rgba(15,23,42,0.88));
+      border-bottom: 1px solid rgba(148,163,184,0.18);
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      overflow: hidden;
+      box-shadow: 0 0 0 2px rgba(148,163,184,0.7);
+      flex-shrink: 0;
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .brand-text-title {
+      font-size: 0.95rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand-text-sub {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 3px;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(to right, #f97316, #facc15);
+      transition: width 0.18s ease-out;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: linear-gradient(to right, #f97316, #facc15);
+      color: #111827;
+      font-weight: 600;
+      border: none;
+      text-decoration: none;
+      font-size: 0.85rem;
+      box-shadow: 0 10px 30px rgba(249,115,22,0.6);
+      white-space: nowrap;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 82px 16px 32px;
+    }
+
+    /* HERO – uses rooms.jpg */
+    .hero-shell {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 22px;
+    }
+
+    .hero-bg {
+      filter: brightness(1.05) contrast(1.08) saturate(1.1);
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to bottom, rgba(15,23,42,0.35), rgba(15,23,42,0.9)),
+        url("rooms.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: scale(1.02);
+    }
+
+    .hero-overlay {
+      position: relative;
+      z-index: 1;
+      padding: 22px 20px 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .hero-heading {
+      font-size: 1.9rem;
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      margin: 0 0 6px 0;
+    }
+
+    .hero-heading span {
+      background: linear-gradient(to right, #f97316, #facc15);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 0.95rem;
+      color: #e5e7eb;
+      margin: 0 0 6px 0;
+      max-width: 520px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: rgba(15,23,42,0.65);
+      color: #e5e7eb;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 6px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 15px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      border: 1px solid transparent;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background 0.12s ease-out, color 0.12s ease-out, border-color 0.12s ease-out;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, #f97316, #facc15);
+      color: #111827;
+      box-shadow: 0 12px 32px rgba(249,115,22,0.7);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 36px rgba(249,115,22,0.8);
+    }
+
+    .btn-outline {
+      background: rgba(15,23,42,0.35);
+      color: #e5e7eb;
+      border-color: rgba(148,163,184,0.7);
+    }
+
+    .btn-outline:hover {
+      border-color: #f97316;
+      background: rgba(15,23,42,0.8);
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: #d1d5db;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.26), transparent 60%), var(--card);
+      border-radius: 16px;
+      padding: 13px 13px 11px;
+      border: 1px solid rgba(148,163,184,0.55);
+      font-size: 0.85rem;
+      box-shadow: 0 18px 46px rgba(15,23,42,0.95);
+    }
+
+    .hero-card h3 {
+      margin: 0 0 5px 0;
+      font-size: 0.95rem;
+    }
+
+    .hero-card p {
+      margin: 0;
+      color: #cbd5f5;
+    }
+
+    .hero-card small {
+      color: #9ca3af;
+      font-size: 0.78rem;
+    }
+
+    /* TRUST STRIP */
+    .trust-strip {
+      margin: 0 auto 20px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 0 0, rgba(34,197,94,0.18), transparent 60%), #020617;
+      border: 1px solid rgba(148,163,184,0.5);
+      padding: 6px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.82rem;
+      box-shadow: 0 12px 32px rgba(15,23,42,0.85);
+      flex-wrap: wrap;
+    }
+
+    .trust-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .trust-score-main {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #facc15;
+    }
+
+    .trust-score-stars {
+      color: #facc15;
+      font-size: 0.9rem;
+    }
+
+    .trust-right {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: flex-end;
+    }
+
+    .trust-chip {
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.6);
+      font-size: 0.76rem;
+      color: #e5e7eb;
+      white-space: nowrap;
+    }
+
+    main .section {
+      margin-bottom: 24px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .section-lead {
+      font-size: 0.92rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 12px;
+    }
+
+    .room-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+
+    .room-card {
+      background: var(--card);
+      border-radius: var(--radius-md);
+      padding: 13px 13px 11px;
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 34px rgba(15,23,42,0.95);
+      font-size: 0.88rem;
+    }
+
+    .room-card h3 {
+      margin: 0 0 4px 0;
+      font-size: 1rem;
+    }
+
+    .room-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 5px;
+    }
+
+    .badge-small {
+      font-size: 0.7rem;
+      padding: 3px 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.55);
+      background: rgba(15,23,42,0.85);
+      color: #e5e7eb;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+      margin-top: 6px;
+      background: rgba(2,6,23,0.96);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 14px 36px rgba(15,23,42,0.95);
+    }
+
+    th, td {
+      border: 1px solid rgba(31,41,55,0.9);
+      padding: 7px 9px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: rgba(15,23,42,0.98);
+      font-weight: 600;
+    }
+
+    /* GALLERY */
+    .gallery-intro {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 10px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid rgba(31,41,55,0.9);
+      background: #020617;
+      cursor: pointer;
+      box-shadow: 0 14px 32px rgba(15,23,42,0.9);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.18s ease-out;
+    }f
+
+    .gallery-item:hover img {
+      transform: scale(1.03);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 5px 7px;
+      background: linear-gradient(to top, rgba(15,23,42,0.9), transparent);
+      font-size: 0.76rem;
+      color: #e5e7eb;
+    }
+
+    .gallery-group-title {
+      grid-column: 1 / -1;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    /* Lightbox */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+      padding: 20px;
+    }
+
+    .lightbox-overlay.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      max-width: 96vw;
+      max-height: 92vh;
+      position: relative;
+    }
+
+    .lightbox-content img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+    }
+
+    .lightbox-caption {
+      margin-top: 8px;
+      color: #e5e7eb;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: #f9fafb;
+      color: #020617;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-weight: 700;
+      box-shadow: 0 8px 26px rgba(0,0,0,0.85);
+    }
+
+    footer {
+      border-top: 1px solid rgba(148,163,184,0.24);
+      padding: 13px 16px 18px;
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: #020617;
+    }
+
+    footer a {
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .hero-overlay {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .room-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        position: sticky;
+      }
+      .nav-inner {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      nav {
+        width: 100%;
+        justify-content: flex-end;
+      }
+      main {
+        padding-top: 76px;
+      }
+      .gallery {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<a href="https://wa.me/94777210775"
+class="whatsapp-float">
+  WhatsApp
+</a>
+<body>
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="Logo.jpg" alt="LP Residence logo">
+        </div>
+        <div>
+          <div class="brand-text-title">LP Residence</div>
+          <div class="brand-text-sub">Rooms &amp; Photo Gallery</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="rooms.html">Rooms &amp; Gallery</a>
+        <a href="contact.html">Booking &amp; Contact</a>
+        <a href="contact.html#booking" class="nav-cta">Book now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero-shell">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay">
+        <div>
+          <h1 class="hero-heading">
+            <span>Comfortable rooms</span><br>
+            for solo travellers, couples &amp; families
+          </h1>
+          <p class="hero-sub">
+            Choose from Queen, King and Family rooms with shared or attached bathrooms, access to common living spaces and a relaxing rooftop garden.
+          </p>
+          <div class="hero-badges">
+            <span class="badge">Queen, King &amp; Family rooms</span>
+            <span class="badge">Free Wi‑Fi &amp; parking</span>
+            <span class="badge">Rooftop &amp; garden views</span>
+          </div>
+          <div class="hero-buttons">
+            <a href="#rates" class="btn btn-primary">View rooms &amp; rates</a>
+            <a href="contact.html#booking" class="btn btn-outline">Check dates &amp; book</a>
+          </div>
+          <div class="hero-note">
+            Rates from 20–35 USD per night depending on room type and size.
+          </div>
+        </div>
+        <aside class="hero-card">
+          <h3>Guest comfort first</h3>
+          <p>
+            Rooms are designed for a simple, homely stay – clean bedding, good ventilation or AC, and easy access to bathrooms and common spaces.
+            <br><small>Photos below are all taken at LP Residence.</small>
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section class="trust-strip">
+      <div class="trust-left">
+        <div class="trust-score-main">4.9 / 5</div>
+        <div class="trust-score-stars">★★★★★</div>
+        <div style="color:#e5e7eb;font-size:0.8rem;">Guests praise cleanliness, comfort and value for money.</div>
+      </div>
+      <div class="trust-right">
+        <div class="trust-chip">Free Wi‑Fi &amp; parking included</div>
+        <div class="trust-chip">Family‑run property</div>
+        <div class="trust-chip">Clear nightly pricing</div>
+      </div>
+    </section>
+
+    <!-- ROOMS & RATES -->
+    <section class="section" id="rates">
+      <div class="section-header">
+        <h2 class="section-title">Our rooms &amp; rates</h2>
+        <div class="section-kicker">From 20–35 USD per night</div>
+      </div>
+      <p class="section-lead">
+        All rooms include comfortable beds, high‑speed Wi‑Fi and access to shared living spaces.
+        A simple USD 10 deposit confirms your booking, with the balance payable at check‑in.
+      </p>
+
+      <div class="room-grid">
+        <article class="room-card">
+          <h3>Queen Double Room – AC</h3>
+          <div class="room-meta">From 25 USD per night · Sleeps up to 4 adults</div>
+          <div class="badge-row">
+            <span class="badge-small">2 Queen beds</span>
+            <span class="badge-small">Air‑conditioning</span>
+            <span class="badge-small">Ceiling fan</span>
+            <span class="badge-small">Shared bathroom</span>
+          </div>
+          <p>
+            Spacious room with two Queen beds, AC and fans, sharing a large bathroom on the same floor.
+            Popular with families and small groups who want comfort and value.
+          </p>
+        </article>
+
+        <article class="room-card">
+          <h3>Queen Double Room – Non‑AC</h3>
+          <div class="room-meta">From 20 USD per night · Sleeps up to 4 adults</div>
+          <div class="badge-row">
+            <span class="badge-small">2 Queen beds</span>
+            <span class="badge-small">Ceiling fan</span>
+            <span class="badge-small">Shared bathroom</span>
+          </div>
+          <p>
+            Similar layout to the AC Queen room, ideal for guests who prefer natural airflow with ceiling fans and open windows.
+          </p>
+        </article>
+
+        <article class="room-card">
+          <h3>King Room – AC</h3>
+          <div class="room-meta">From 20 USD per night · Sleeps up to 2 adults</div>
+          <div class="badge-row">
+            <span class="badge-small">King bed</span>
+            <span class="badge-small">Air‑conditioning</span>
+            <span class="badge-small">Ceiling fan</span>
+            <span class="badge-small">Shared bathroom</span>
+          </div>
+          <p>
+            A cosy room with a King size bed, AC and fan – perfect for solo travellers or couples looking for a comfortable base near Colombo.
+          </p>
+        </article>
+
+        <article class="room-card">
+          <h3>Large Family Room</h3>
+          <div class="room-meta">From 35 USD per night · Sleeps up to 6 adults</div>
+          <div class="badge-row">
+            <span class="badge-small">2 Queen beds</span>
+            <span class="badge-small">1 double + 1 single bed</span>
+            <span class="badge-small">Attached bathroom</span>
+            <span class="badge-small">Close to rooftop</span>
+          </div>
+          <p>
+            Our largest room with multiple beds and attached bathroom, ideal for bigger families or groups travelling together.
+          </p>
+        </article>
+      </div>
+
+      <table>
+        <tr>
+          <th>Room type</th>
+          <th>Description</th>
+          <th>Rate per night (USD)</th>
+        </tr>
+        <tr>
+          <td>Queen Double Room – AC</td>
+          <td>Two Queen beds with AC and fans, sharing a bathroom and common living space on the same floor. Up to 4 adults.</td>
+          <td>25 USD</td>
+        </tr>
+        <tr>
+          <td>Queen Double Room – Non‑AC</td>
+          <td>Two Queen beds with ceiling fans and natural ventilation, sharing a large bathroom. Up to 4 adults.</td>
+          <td>20 USD</td>
+        </tr>
+        <tr>
+          <td>King Room – AC</td>
+          <td>One King bed with AC and fan, sharing a large bathroom. Great for solo travellers or couples.</td>
+          <td>20 USD</td>
+        </tr>
+        <tr>
+          <td>Large Family Room</td>
+          <td>Two Queen beds, one double and one single bed with attached bathroom and easy access to the rooftop. Up to 6 adults.</td>
+          <td>35 USD</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Photo gallery</h2>
+        <div class="section-kicker">Entrance · Rooms · Rooftop</div>
+      </div>
+      <p class="gallery-intro">
+        A look around LP Residence – from the entrance and garden to living spaces, bedrooms and rooftop.
+        Tap or click any photo to view it in a larger size.
+      </p>
+
+      <div class="gallery">
+        <div class="gallery-group-title">Entrance &amp; outdoor</div>
+
+        <div class="gallery-item" data-full="images/Entrance.jpg" data-caption="Entrance">
+          <img src="images/Entrance.jpg" alt="Entrance of LP Residence" loading="lazy">
+          <div class="gallery-caption">Entrance</div>
+        </div>
+
+        <div class="gallery-item" data-full="images/Front door.jpg" data-caption="Front door">
+          <img src="images/Front door.jpg" alt="Front door" loading="lazy">
+          <div class="gallery-caption">Front door</div>
+        </div>
+
+        <div class="gallery-item" data-full="images/Front garden.jpg" data-caption="Front garden">
+          <img src="images/Front garden.jpg" alt="Front garden" loading="lazy">
+          <div class="gallery-caption">Front garden</div>
+        </div>
+
+        <div class="gallery-item" data-full="images/Front view.jpg" data-caption="Front view">
+          <img src="images/Front view.jpg" alt="Front view of LP Residence" loading="lazy">
+          <div class="gallery-caption">Front view</div>
+        </div>
+
+        <div class="gallery-group-title">Reception &amp; common areas</div>
+
+        <div class="gallery-item" data-full="images/Reception area.jpg" data-caption="Reception area">
+          <img src="images/Reception area.jpg" alt="Reception area" loading="lazy">
+          <div class="gallery-caption">Reception area</div>
+        </div>
+
+        <div class="gallery-item" data-full="images/Inside ground.jpg" data-caption="Inside ground floor">
+          <img src="images/Inside ground.jpg" alt="Inside ground floor" loading="lazy">
+          <div class="gallery-caption">Inside ground floor</div>
+        </div>
+
+        <div class="gallery-item" data-full="images/Dining space.jpg" data-caption="Dining space">
+          <img src="images/Dining space.jpg" alt="Dining space" loading="lazy">
+          <div class="gallery-caption">Dining space</div>
+        </div>
+
+        <div class="gallery-item" data-full="images/Kitchen 1.jpg" data-caption="Kitchen 1 (staff use)">
+          <img src="images/Kitchen 1.jpg" alt="Kitchen 1" loading="lazy">
+          <div class="gallery-caption">Kitchen 1 (staff use only)</div>
+        </div>
+
+        <div class="gallery-item" data-full="images/Kitchen 2.jpg" data-caption="Kitchen 2 (staff use)">
+          <img src="images/Kitchen 2.jpg" alt="Kitchen 2" loading="lazy">
+          <div class="gallery-caption">Kitchen 2 (staff use only)</div>
+        </div>
+
+        <div class="gallery-item" data-full="images/Second floor living.jpg" data-caption="Second floor living">
+          <img src="images/Second floor living.jpg" alt="Second floor living area" loading="lazy">
+          <div class="gallery-caption">Second floor living area</div>
+        </div>
+
+        <div class="gallery-item" data-full="images/TV space.jpg" data-caption="TV space">
+          <img src="images/TV space.jpg" alt="TV space" loading="lazy">
+          <div class="gallery-caption">TV space</div>
+        </div>
+
+        <div class="gallery-group-title">Bedrooms &amp; bathrooms</div>
+
+        <div class="gallery-item" data-full="images/Bed room 1.jpg" data-caption="Bedroom 1">
+          <img src="images/Bed room 1.jpg" alt="Bedroom 1" loading="lazy">
+          <div class="gallery-caption">Bedroom 1</div>
+        </div>
+
+        <div class="gallery-item" data-full="images/Bed room 2.jpg" data-caption="Bedroom 2">
+          <img src="images/Bed room 2.jpg" alt="Bedroom 2" loading="lazy">
+          <div class="gallery-caption">Bedroom 2</div>
+        </div>
+
+        <div class="gallery-item" data-full="images/Bed room 3[1].jpg" data-caption="Bedroom 3 – view 1">
+          <img src="images/Bed room 3[1].jpg" alt="Bedroom 3 view 1" loading="lazy">
+          <div class="gallery-caption">Bedroom 3 – view 1</div>
+        </div>
+
+        <div class="gallery-item" data-full="images/Bed room 3[2].jpg" data-caption="Bedroom 3 – view 2">
+          <img src="images/Bed room 3[2].jpg" alt="Bedroom 3 view 2" loading="lazy">
+          <div class="gallery-caption">Bedroom 3 – view 2</div>
+        </div>
+
+        <div class="gallery-item" data-full="images/Common bath.jpg" data-caption="Common bathroom">
+          <img src="images/Common bath.jpg" alt="Common bathroom" loading="lazy">
+          <div class="gallery-caption">Common bathroom</div>
+        </div>
+
+        <div class="gallery-item" data-full="images/Bed room 4[1].jpg" data-caption="Bedroom 4 – view 1">
+          <img src="images/Bed room 4[1].jpg" alt="Bedroom 4 view 1" loading="lazy">
+          <div class="gallery-caption">Bedroom 4 – view 1</div>
+        </div>
+
+        <div class="gallery-item" data-full="images/Bed room 4[2].jpg" data-caption="Bedroom 4 – view 2">
+          <img src="images/Bed room 4[2].jpg" alt="Bedroom 4 view 2" loading="lazy">
+          <div class="gallery-caption">Bedroom 4 – view 2</div>
+        </div>
+
+        <div class="gallery-item" data-full="images/Bed room 5.jpg" data-caption="Bedroom 5">
+          <img src="images/Bed room 5.jpg" alt="Bedroom 5" loading="lazy">
+          <div class="gallery-caption">Bedroom 5</div>
+        </div>
+
+        <div class="gallery-item" data-full="images/Attache bath.jpg" data-caption="Attached bathroom">
+          <img src="images/Attache bath.jpg" alt="Attached bathroom" loading="lazy">
+          <div class="gallery-caption">Attached bathroom</div>
+        </div>
+
+        <div class="gallery-group-title">Rooftop &amp; garden</div>
+
+        <div class="gallery-item" data-full="images/Roof top.jpg" data-caption="Rooftop">
+          <img src="images/Roof top.jpg" alt="Rooftop" loading="lazy">
+          <div class="gallery-caption">Rooftop</div>
+        </div>
+
+        <div class="gallery-item" data-full="images/Roof top garden.jpg" data-caption="Rooftop garden">
+          <img src="images/Roof top garden.jpg" alt="Rooftop garden" loading="lazy">
+          <div class="gallery-caption">Rooftop garden</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-content">
+      <div class="lightbox-close" id="lightboxClose">&times;</div>
+      <img id="lightboxImage" src="" alt="">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <footer>
+  <div style="max-width:1120px;margin:auto;text-align:center;">
+    <p><strong>LP Residence</strong></p>
+    <p>Kottawa, Sri Lanka</p>
+    <p>Comfortable family-run accommodation with warm hospitality.</p>
+    <p style="margin-top:10px;">
+      <a href="index.html">Home</a> ·
+      <a href="rooms.html">Rooms</a> ·
+      <a href="contact.html">Contact</a>
+    </p>
+    <p style="margin-top:14px;font-size:0.78rem;">
+      © 2026 LP Residence. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+  <script>
+    const items = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        const fullSrc = item.getAttribute('data-full');
+        const caption = item.getAttribute('data-caption') || '';
+        lightboxImage.src = fullSrc;
+        lightboxCaption.textContent = caption;
+        lightbox.classList.add('active');
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      lightboxImage.src = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>

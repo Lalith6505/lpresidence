@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MWW44WR4TY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MWW44WR4TY');
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>LP Residence – Homestay in Kottawa, Sri Lanka</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LP Residence is a family-run homestay on Temple Road in Kottawa, Sri Lanka. Comfortable rooms, rooftop garden, free parking and warm local hospitality just minutes from Colombo.">
+<meta property="og:title" content="LP Residence Kottawa">
+<meta property="og:description" content="Family-run homestay in Sri Lanka">
+<meta property="og:image" content="index.jpg">
+<meta property="og:type" content="website">
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-soft: #020617;
+      --accent: #f97316;
+      --accent-soft: rgba(249,115,22,0.08);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: rgba(15,23,42,0.94);
+      --border: rgba(148,163,184,0.32);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 26px 70px rgba(15,23,42,0.85);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(249,115,22,0.08), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(56,189,248,0.06), transparent 30%),
+    var(--bg);
+}
+    html {
+  scroll-behavior: smooth;
+}
+.room-card,
+.gallery-item img {
+  width: 100%;<img src="...">f
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.hero-card,
+.feature-card {
+  transition: all 0.28s ease;
+}
+
+.room-card:hover,
+.gallery-item:hover,
+.hero-card:hover,
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+    a {
+      color: inherit;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 40;
+      backdrop-filter: blur(20px);
+      background: linear-gradient(to right, rgba(15,23,42,0.9), rgba(15,23,42,0.88));
+      border-bottom: 1px solid rgba(148,163,184,0.18);
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 2px rgba(148,163,184,0.7);
+      background: #020617;
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .brand-text-title {
+      font-size: 1rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand-text-sub {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 3px;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(to right, #f97316, #facc15);
+      transition: width 0.18s ease-out;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: linear-gradient(to right, #f97316, #facc15);
+      color: #111827;
+      font-weight: 600;
+      border: none;
+      text-decoration: none;
+      font-size: 0.85rem;
+      box-shadow: 0 10px 30px rgba(249,115,22,0.55);
+      white-space: nowrap;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 82px 16px 32px;
+    }
+
+    /* HERO with big background photo (index.jpg) */
+    .hero-shell {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 28px;
+    }
+
+    .hero-bg {
+      filter: brightness(1.05) contrast(1.08) saturate(1.1);
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to bottom, rgba(15,23,42,0.35), rgba(15,23,42,0.9)),
+        url("index.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: scale(1.02);
+      filter: saturate(1.1);
+    }
+
+    .hero-overlay {
+      position: relative;
+      z-index: 1;
+      padding: 26px 22px 22px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 20px;
+      color: #e5e7eb;
+    }
+
+    .hero-heading {
+      font-size: clamp(2.0rem, 3vw, 2.5rem);
+      line-height: 1.1;
+      font-weight: 800;
+      margin: 0 0 8px 0;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-heading span {
+      background: linear-gradient(to right, #f97316, #facc15);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 0.98rem;
+      color: #e5e7eb;
+      max-width: 520px;
+      margin: 0 0 10px 0;
+    }
+
+    .hero-sub strong {
+      font-weight: 600;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 12px;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: rgba(15,23,42,0.65);
+      color: #e5e7eb;
+    }
+
+    .badge-primary {
+      border-color: transparent;
+      background: linear-gradient(to right, #22c55e, #22d3ee);
+      color: #022c22;
+      font-weight: 600;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid transparent;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background 0.12s ease-out, color 0.12s ease-out, border-color 0.12s ease-out;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, #f97316, #facc15);
+      color: #111827;
+      box-shadow: 0 14px 35px rgba(249,115,22,0.7);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(249,115,22,0.8);
+    }
+
+    .btn-outline {
+      background: rgba(15,23,42,0.35);
+      color: #e5e7eb;
+      border-color: rgba(148,163,184,0.7);
+    }
+
+    .btn-outline:hover {
+      background: rgba(15,23,42,0.7);
+      border-color: #f97316;
+    }
+
+    .btn-paypal {
+      background: #0070ba;
+      color: #e5e7eb;
+      box-shadow: 0 12px 32px rgba(0,112,186,0.75);
+    }
+
+    .btn-paypal:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(0,112,186,0.85);
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: #d1d5db;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at 0 0, rgba(34,197,94,0.28), transparent 60%), rgba(15,23,42,0.96);
+      border-radius: 18px;
+      padding: 14px 14px 12px;
+      border: 1px solid rgba(148,163,184,0.55);
+      box-shadow: 0 20px 50px rgba(15,23,42,0.9);
+      font-size: 0.9rem;
+    }
+
+    .hero-card-title {
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #9ca3af;
+      margin-bottom: 3px;
+    }
+
+    .hero-card-main {
+      font-size: 1.02rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .hero-card-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 6px 0;
+      font-size: 0.85rem;
+      color: #cbd5f5;
+    }
+
+    .hero-card-list li {
+      margin-bottom: 4px;
+    }
+
+    .hero-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 6px;
+      font-size: 0.8rem;
+    }
+
+    .hero-pill {
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: rgba(15,23,42,0.8);
+      color: #e5e7eb;
+    }
+
+    .hero-price {
+      font-size: 0.85rem;
+      color: #e5e7eb;
+    }
+
+    /* Trust / reviews strip */
+    .trust-strip {
+      margin: 0 auto 22px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 0 0, rgba(34,197,94,0.18), transparent 60%), #020617;
+      border: 1px solid rgba(148,163,184,0.5);
+      padding: 7px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.85rem;
+      box-shadow: 0 12px 32px rgba(15,23,42,0.85);
+      flex-wrap: wrap;
+    }
+
+    .trust-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .trust-score {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .trust-score-main {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #facc15;
+    }
+
+    .trust-score-stars {
+      color: #facc15;
+      font-size: 0.9rem;
+    }
+
+    .trust-right {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: flex-end;
+    }
+
+    .trust-chip {
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.6);
+      font-size: 0.78rem;
+      color: #e5e7eb;
+      white-space: nowrap;
+    }
+
+    .trust-chip.ok {
+      background: rgba(22,163,74,0.2);
+      border-color: rgba(34,197,94,0.7);
+      color: #bbf7d0;
+    }
+
+    .section {
+      margin-bottom: 26px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .section-lead {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card-feature {
+      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.24), transparent 60%), var(--card);
+      border-radius: var(--radius-md);
+      padding: 14px 14px 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 34px rgba(15,23,42,0.9);
+      font-size: 0.88rem;
+    }
+
+    .card-feature h3 {
+      margin: 0 0 6px 0;
+      font-size: 0.98rem;
+      color: #e5e7eb;
+    }
+
+    .card-feature p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .about-text {
+      background: var(--card);
+      border-radius: var(--radius-md);
+      padding: 14px 14px 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 34px rgba(15,23,42,0.9);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .about-text p {
+      margin: 0 0 9px 0;
+    }
+
+    .about-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+      font-size: 0.82rem;
+    }
+
+    .about-chip {
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.55);
+      color: #e5e7eb;
+    }
+
+    .about-card {
+      background: radial-gradient(circle at 0 0, rgba(34,197,94,0.3), transparent 60%), var(--card);
+      border-radius: var(--radius-md);
+      padding: 13px 13px 11px;
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 34px rgba(15,23,42,0.9);
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .about-card strong {
+      color: #e5e7eb;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .stat {
+      border-radius: var(--radius-md);
+      padding: 10px;
+      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.25), transparent 60%), #020617;
+      border: 1px solid rgba(148,163,184,0.37);
+      text-align: left;
+      font-size: 0.86rem;
+      color: var(--muted);
+      box-shadow: 0 12px 30px rgba(15,23,42,0.9);
+    }
+
+    .stat-number {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #e5e7eb;
+      margin-bottom: 2px;
+    }
+     
+    @media (max-width: 900px) {
+      .hero-overlay {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 20px 18px 18px;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .stats-row {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        position: sticky;
+      }
+      .nav-inner {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      nav {
+        width: 100%;
+        justify-content: flex-end;
+      }
+      main {
+        padding-top: 76px;
+      }
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .stats-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<a href="https://wa.me/94777210775"
+class="whatsapp-float">
+  WhatsApp
+</a>
+<body>
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="Logo.jpg" alt="LP Residence logo">
+        </div>
+        <div>
+          <div class="brand-text-title">LP Residence</div>
+          <div class="brand-text-sub">Homestay · Kottawa · Sri Lanka</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="rooms.html">Rooms &amp; Gallery</a>
+        <a href="contact.html">Booking &amp; Contact</a>
+        <a href="contact.html#booking" class="nav-cta">Book now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero-shell">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay">
+        <div>
+          <h1 class="hero-heading">
+            <span>Highly rated homestay</span><br>
+            in quiet Kottawa town
+          </h1>
+          <p class="hero-sub">
+            Stay in a calm, family‑run guest house with <strong>comfortable rooms, free parking and high‑speed Wi‑Fi</strong> –
+            just minutes from the Makumbura transport hub and expressway.
+          </p>
+          <div class="hero-badges">
+            <span class="badge-primary">Guest rating: 4.9 / 5</span>
+            <span class="badge">120+ guests hosted</span>
+            <span class="badge">98% would stay again</span>
+          </div>
+          <div class="hero-buttons">
+            <a href="contact.html#booking" class="btn btn-primary">Check availability</a>
+            <a href="rooms.html" class="btn btn-outline">View rooms &amp; prices</a>
+            <a href="https://www.paypal.com/ncp/payment/CMW4MRZGW6NJL" target="_blank" rel="noopener noreferrer" class="btn btn-paypal">
+              Pay advance with PayPal
+            </a>
+          </div>
+          <div class="hero-note">
+            Simple booking: USD 10 deposit confirms your stay – balance payable at check‑in.
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="hero-card-title">At a glance</div>
+          <div class="hero-card-main">LP Residence · Temple Road, Kottawa</div>
+          <ul class="hero-card-list">
+            <li>Quiet guest house in a residential lane within Kottawa town.</li>
+            <li>Short distance from Makumbura Multimodal Transport Hub and highway entrance.</li>
+            <li>Ideal base for visiting Colombo, the south or surrounding areas.</li>
+          </ul>
+          <div class="hero-pill-row">
+            <span class="hero-pill">Family‑run &amp; hosted</span>
+            <span class="hero-pill">Queen, King &amp; Family rooms</span>
+            <span class="hero-pill">Free on‑site parking</span>
+            <span class="hero-pill">Airport pickup on request</span>
+          </div>
+          <div class="hero-price">
+            Nightly rates from <strong>20–35 USD</strong> per room.
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section class="trust-strip" aria-label="Guest reviews and trust badges">
+      <div class="trust-left">
+        <div class="trust-score">
+          <div class="trust-score-main">4.9 / 5</div>
+          <div class="trust-score-stars">★★★★★</div>
+        </div>
+        <div style="font-size:0.82rem;color:#e5e7eb;">
+          Based on recent guest feedback and repeat stays.
+        </div>
+      </div>
+      <div class="trust-right">
+        <div class="trust-chip ok">98% of guests would stay again</div>
+        <div class="trust-chip">Family‑run homestay</div>
+        <div class="trust-chip">Secure PayPal booking deposit</div>
+        <div class="trust-chip">Free high‑speed Wi‑Fi &amp; parking</div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Why guests choose LP Residence</h2>
+        <div class="section-kicker">Comfort · Convenience · Hospitality</div>
+      </div>
+      <p class="section-lead">
+        LP Residence blends the privacy of your own guest house with the warmth of a Sri Lankan family home.
+        Recent guests highlight the peaceful location, quick transport connections and friendly support from the hosts.
+      </p>
+      <div class="grid">
+        <article class="card-feature">
+          <h3>Quiet &amp; independent</h3>
+          <p>
+            Enjoy your room with plenty of privacy in a calm residential street, while still being within Kottawa town and everyday local life.
+          </p>
+        </article>
+        <article class="card-feature">
+          <h3>Convenient location</h3>
+          <p>
+            Temple Road location close to the Makumbura transport hub and Southern Expressway entrance –
+            ideal for airport runs, Colombo trips and exploring the south.
+          </p>
+        </article>
+        <article class="card-feature">
+          <h3>Flexible extras</h3>
+          <p>
+            High‑speed Wi‑Fi and parking are included. Meals and airport transfers can be arranged on request to match your travel plans.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT US + REVIEWS -->
+    <section class="section" id="about">
+      <div class="section-header">
+        <h2 class="section-title">About us &amp; reviews</h2>
+        <div class="section-kicker">Family‑run guest house</div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            LP Residence is a friendly, family‑run guest house offering quiet, independent rooms for rent in the heart of Kottawa town.
+            You stay in a peaceful residential street while still being just a short walk from local shops, temples and daily life.
+          </p>
+          <p>
+            Guests enjoy comfortable bedrooms, free on‑site parking and high‑speed Wi‑Fi included as standard.
+            All main meals can be arranged on request for an additional charge, so you can choose between eating out or enjoying home‑style Sri Lankan food at the property.
+          </p>
+          <p>
+            For travellers, LP Residence is very conveniently located close to the Makumbura Multimodal Transport Hub and the Southern Expressway entrance,
+            making it easy to reach Colombo and other parts of the island. Airport pickup and drop‑off can be arranged in advance, so you can arrive and depart without stress.
+          </p>
+          <p>
+            Whether you are visiting family, travelling for work or exploring Sri Lanka, we offer a simple, affordable and homely place to stay with hosts who are always happy to help.
+          </p>
+
+          <div class="about-list">
+            <div class="about-chip">Quiet street in Kottawa town</div>
+            <div class="about-chip">High‑speed Wi‑Fi (complimentary)</div>
+            <div class="about-chip">Meals available on request</div>
+            <div class="about-chip">Airport pickup &amp; drop‑off</div>
+          </div>
+        </div>
+
+        <aside class="about-card">
+          <p><strong>What guests say</strong></p>
+          <p>
+            “A truly wonderful stay. The hosts were incredibly welcoming and the room was spotlessly clean. Felt like staying with family.”
+            <br><strong>— Sarah M., UK</strong>
+          </p>
+          <p>
+            “Perfect location for exploring Kottawa and easy access to Colombo. Great value and genuinely friendly service.”
+            <br><strong>— Priyantha D., Australia</strong>
+          </p>
+          <p>
+            “Clean, comfortable and peaceful. The rooftop space and local breakfast recommendations were excellent.”
+            <br><strong>— James &amp; Lina, Germany</strong>
+          </p>
+        </aside>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-number">4.9 / 5</div>
+          Average guest satisfaction from recent reviews and feedback.
+        </div>
+        <div class="stat">
+          <div class="stat-number">120+</div>
+          Guests hosted since opening at LP Residence.
+        </div>
+        <div class="stat">
+          <div class="stat-number">98%</div>
+          Guests who say they would recommend us to friends and family.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div style="max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
+      <div>&copy; 2026 LP Residence, Kottawa, Sri Lanka.</div>
+      <div>Official site: <a href="https://lpresidence.netlify.app/">lpresidence.netlify.app</a></div>
+    </div>
+ <footer>
+  <div style="max-width:1120px;margin:auto;text-align:center;">
+    <p><strong>LP Residence</strong></p>
+    <p>Kottawa, Sri Lanka</p>
+    <p>Comfortable family-run accommodation with warm hospitality.</p>
+    <p style="margin-top:10px;">
+      <a href="index.html">Home</a> ·
+      <a href="rooms.html">Rooms</a> ·
+      <a href="contact.html">Contact</a>
+    </p>
+    <p style="margin-top:14px;font-size:0.78rem;">
+      © 2026 LP Residence. All rights reserved.
+    </p>
+  </div>
+</footer>
+</body>
+</html>

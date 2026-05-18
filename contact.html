@@ -9,17 +9,24 @@
     gtag('js', new Date());
     gtag('config', 'G-MWW44WR4TY');
   </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- PayPal JS SDK for hosted buttons (kept in case you want it later) -->
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAAmG9fu7SmVrPAqejPHa2CFrZzmthfxTSibK8u6z_wE14j-Wx65-liQe0pCKC7VWTp0ERRFjxBq6kyk0M&components=hosted-buttons&disable-funding=venmo&currency=USD">
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <title>Booking &amp; Contact – LP Residence Kottawa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Contact LP Residence homestay in Kottawa, Sri Lanka. Check availability, pay a USD 10 booking deposit by PayPal, and find our location on Google Maps.">
-<meta property="og:title" content="LP Residence Kottawa">
-<meta property="og:description" content="Family-run homestay in Sri Lanka">
-<meta property="og:image" content="index.jpg">
-<meta property="og:type" content="website">
+  <meta property="og:title" content="LP Residence Kottawa">
+  <meta property="og:description" content="Family-run homestay in Sri Lanka">
+  <meta property="og:image" content="index.jpg">
+  <meta property="og:type" content="website">
+
   <style>
     :root {
       --bg: #020617;
@@ -35,37 +42,41 @@
 
     * { box-sizing: border-box; }
 
-        body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  color: var(--text);
-  background:
-    radial-gradient(circle at top left, rgba(249,115,22,0.08), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(56,189,248,0.06), transparent 30%),
-    var(--bg);
-}
-    html {
-  scroll-behavior: smooth;
-}
-.room-card,
-.gallery-item img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
-}
-.hero-card,
-.feature-card {
-  transition: all 0.28s ease;
-}
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(249,115,22,0.08), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(56,189,248,0.06), transparent 30%),
+        var(--bg);
+    }
 
-.room-card:hover,
-.gallery-item:hover,
-.hero-card:hover,
-.feature-card:hover {
-  transform: translateY(-4px);
-}
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .room-card,
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-card,
+    .feature-card {
+      transition: all 0.28s ease;
+    }
+
+    .room-card:hover,
+    .gallery-item:hover,
+    .hero-card:hover,
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+
     header {
       position: fixed;
       top: 0;
@@ -575,7 +586,7 @@
       display: none;
     } 
    
-      @media (max-width: 900px) {
+    @media (max-width: 900px) {
       .hero-overlay {
         grid-template-columns: minmax(0, 1fr);
       }
@@ -635,10 +646,11 @@
     }
   </style>
 </head>
-<a href="https://wa.me/94777210775"
-class="whatsapp-float">
+
+<a href="https://wa.me/94777210775" class="whatsapp-float">
   WhatsApp
 </a>
+
 <body>
   <header>
     <div class="nav-inner">
@@ -853,28 +865,29 @@ class="whatsapp-float">
       </p>
 
       <div class="payment-grid">
+        <!-- PayPal payment link button -->
         <div class="card">
-          <h3>Pay deposit via button</h3>
-          <p>This button allows you to pay the fixed USD 10 booking deposit securely via PayPal.</p>
-          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-            <input type="hidden" name="cmd" value="_xclick">
-            <input type="hidden" name="business" value="pmadanayake@gmail.com">
-            <input type="hidden" name="item_name" value="LP Residence Initial Booking Deposit">
-            <input type="hidden" name="amount" value="10.00">
-            <input type="hidden" name="currency_code" value="USD">
-            <input type="hidden" name="no_note" value="0">
-            <button type="submit">Pay USD 10 with PayPal</button>
-          </form>
-        </div>
+          <h3>Pay deposit via PayPal</h3>
+          <p>This button takes you to PayPal to pay the fixed USD 10 booking deposit securely online.</p>
 
-        <div class="card">
-          <h3>Pay deposit via link</h3>
-          <p>If you prefer, you can use our PayPal payment link instead of the button.</p>
-          <a href="https://www.paypal.com/ncp/payment/CMW4MRZGW6NJL"
+          <a href="https://www.paypal.com/ncp/payment/C5CHMDKEVLGFU"
              target="_blank" rel="noopener noreferrer"
              class="btn-paypal-inline">
-            Pay USD 10 deposit via PayPal link
+            Pay USD 10 deposit with PayPal
           </a>
+        </div>
+
+        <!-- QR code option -->
+        <div class="card">
+          <h3>Scan QR to pay</h3>
+          <p>You can also scan this PayPal QR code with your phone to pay the same USD 10 deposit.</p>
+
+          <div style="text-align:center;">
+            <!-- Adjust the src path to where you place the file (root or images/) -->
+            <img src="Advance Paymen-qrcode.png"
+                 alt="PayPal QR code for LP Residence advance payment"
+                 style="max-width:220px;width:100%;height:auto;border-radius:8px;background:#fff;padding:8px;">
+          </div>
         </div>
       </div>
     </section>

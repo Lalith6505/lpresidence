@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MWW44WR4TY"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MWW44WR4TY');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tour Packages – LP Residence Kottawa</title>
+  <meta name="description" content="Discover curated Sri Lanka tour packages from LP Residence, Kottawa. Private vehicles, local guides, flexible itineraries and 3-star comfort stays.">
+  <meta property="og:title" content="Tour Packages – LP Residence">
+  <meta property="og:description" content="Day trips and multi-day tours across Sri Lanka starting from Kottawa. Private transport, local guides and 3-star hotels included.">
+  <meta property="og:image" content="tours.jpg">
+  <link rel="icon" href="Logo.jpg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ── Tours page extras ───────────────────────────────── */
+
+    /* Hero */
+    .tours-hero {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: 480px;
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow);
+    }
+    .tours-hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('tours.jpg');
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.03);
+      transition: transform 8s ease;
+    }
+    .tours-hero:hover .tours-hero-bg { transform: scale(1.06); }
+    .tours-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(9,9,15,0.97) 0%, rgba(9,9,15,0.55) 55%, rgba(9,9,15,0.15) 100%);
+    }
+    .tours-hero-content {
+      position: relative; z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 24px;
+      align-items: end;
+      padding: 40px 36px 36px;
+      width: 100%;
+    }
+
+    /* Tour feature card */
+    .tour-feature-card {
+      background: rgba(22,25,41,0.92);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: var(--radius-lg);
+      padding: 22px 20px;
+      box-shadow: var(--shadow);
+    }
+    .tour-feature-card .label {
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .tour-feature-card .title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .feature-list {
+      list-style: none;
+      font-size: 0.83rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .feature-list li {
+      padding: 5px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: flex-start; gap: 8px;
+    }
+    .feature-list li::before { content: "✓"; color: var(--green); flex-shrink: 0; }
+    .feature-list li:last-child { border-bottom: none; }
+    .price-from {
+      font-size: 0.85rem;
+      color: var(--text);
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+    .price-from strong { color: var(--accent2); font-size: 1.05rem; }
+
+    /* Why us strip */
+    .why-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+    .why-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px 18px;
+      text-align: center;
+      transition: transform 0.18s, border-color 0.18s;
+    }
+    .why-card:hover { transform: translateY(-3px); border-color: var(--border2); }
+    .why-icon { font-size: 2rem; margin-bottom: 10px; }
+    .why-title { font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 5px; }
+    .why-desc  { font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+
+    /* Tour cards */
+    .tours-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-bottom: 40px;
+    }
+    .tour-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+      position: relative;
+    }
+    .tour-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+      border-color: var(--border2);
+    }
+
+    /* Duration badge */
+    .tour-duration-badge {
+      position: absolute;
+      top: 14px; right: 14px;
+      background: rgba(9,9,15,0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent2);
+      letter-spacing: 0.05em;
+      z-index: 2;
+    }
+
+    .tour-img-wrap {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      background: var(--surface);
+    }
+    .tour-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .tour-card:hover .tour-img-wrap img { transform: scale(1.07); }
+    .tour-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(9,9,15,0.6), transparent 60%);
+    }
+
+    .tour-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+
+    .tour-cat {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 7px;
+    }
+    .tour-name {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .tour-desc {
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 14px;
+      flex: 1;
+    }
+
+    .tour-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 16px;
+    }
+    .tour-highlight {
+      font-size: 0.72rem;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      color: var(--muted);
+    }
+
+    .tour-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+    .tour-price { font-size: 0.82rem; color: var(--muted); }
+    .tour-price strong { color: var(--accent); font-size: 0.95rem; font-weight: 800; }
+
+    /* CTA banner */
+    .cta-banner {
+      background: var(--card);
+      border: 1px solid var(--border2);
+      border-radius: var(--radius-lg);
+      padding: 44px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .cta-banner::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(249,115,22,0.09), transparent);
+      pointer-events: none;
+    }
+    .cta-banner h2 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 800; margin-bottom: 10px; }
+    .cta-banner p  { color: var(--muted); max-width: 540px; margin: 0 auto 26px; font-size: 0.95rem; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    /* Itinerary sample */
+    .itinerary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .itinerary-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .itinerary-head {
+      background: linear-gradient(135deg, rgba(249,115,22,0.15), rgba(250,204,21,0.08));
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .itinerary-day {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #111;
+      font-weight: 800;
+      font-size: 0.85rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .itinerary-day-title { font-size: 0.92rem; font-weight: 700; color: var(--text); }
+    .itinerary-day-sub   { font-size: 0.75rem; color: var(--muted); }
+    .itinerary-stops {
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .itinerary-stop {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.84rem;
+    }
+    .itinerary-stop:last-child { border-bottom: none; }
+    .stop-time {
+      font-size: 0.72rem;
+      color: var(--accent);
+      font-weight: 700;
+      width: 52px;
+      flex-shrink: 0;
+      padding-top: 1px;
+    }
+    .stop-name  { color: var(--text); font-weight: 600; }
+    .stop-desc  { color: var(--muted); font-size: 0.78rem; margin-top: 2px; }
+
+    /* Booking note */
+    .booking-note {
+      background: rgba(249,115,22,0.06);
+      border: 1px solid rgba(249,115,22,0.2);
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .booking-note strong { color: var(--accent); }
+    .booking-note ul { padding-left: 18px; margin-top: 8px; }
+    .booking-note li { margin-bottom: 4px; }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .tours-hero-content { grid-template-columns: 1fr; }
+      .tour-feature-card  { display: none; }
+      .tours-grid  { grid-template-columns: repeat(2, 1fr); }
+      .why-strip   { grid-template-columns: repeat(2, 1fr); }
+      .itinerary-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .tours-grid { grid-template-columns: 1fr; }
+      .why-strip  { grid-template-columns: 1fr 1fr; }
+      .tours-hero { min-height: 380px; }
+      .tours-hero-content { padding: 22px 18px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ─────────────────────────────── -->
+<header id="header">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-logo"><img src="Logo.jpg" alt="LP Residence"></div>
+      <div>
+        <div class="brand-name">LP Residence</div>
+        <div class="brand-sub">Homestay · Kottawa · Sri Lanka</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rooms.html">Rooms &amp; Gallery</a></li>
+      <li><a href="explore.html">Explore Sri Lanka</a></li>
+      <li><a href="tours.html" class="active">Tour Packages</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html#booking" class="nav-cta">Book Now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="rooms.html">Rooms &amp; Gallery</a>
+  <a href="explore.html">Explore Sri Lanka</a>
+  <a href="tours.html">Tour Packages</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html#booking" class="nav-cta">Book Now</a>
+</nav>
+
+<!-- ── MAIN ───────────────────────────────── -->
+<main>
+
+  <!-- HERO -->
+  <section class="tours-hero" data-reveal>
+    <div class="tours-hero-bg"></div>
+    <div class="tours-hero-overlay"></div>
+    <div class="tours-hero-content">
+      <div>
+        <div class="hero-tag">🗺️ Explore Sri Lanka with us</div>
+        <h1 class="hero-h1">
+          <span>Curated tour packages</span><br>
+          from Kottawa
+        </h1>
+        <p class="hero-p">
+          Discover beautiful beaches, cultural heritage and wildlife — with comfortable private transport starting directly from <strong>LP Residence</strong> or the nearby <strong>Makumbura Transport Hub</strong>.
+        </p>
+        <div class="hero-badges">
+          <span class="badge">🚗 Private vehicles</span>
+          <span class="badge badge-green">✓ Local guides</span>
+          <span class="badge">🏨 3-star hotels</span>
+          <span class="badge">Flexible itineraries</span>
+        </div>
+        <div class="hero-actions">
+          <a href="contact.html#booking" class="btn btn-primary">Enquire About Tours</a>
+          <a href="#packages" class="btn btn-outline">View All Packages</a>
+          <a href="https://wa.me/94775542258" class="btn btn-wa" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+        </div>
+        <div class="hero-note">All tours fully customised based on your preferences and budget.</div>
+      </div>
+
+      <aside class="tour-feature-card">
+        <div class="label">What's included</div>
+        <div class="title">LP Residence Excursions</div>
+        <ul class="feature-list">
+          <li>Pick-up &amp; drop-off from LP Residence or airport</li>
+          <li>Clean, air-conditioned car or van with dedicated driver</li>
+          <li>Handpicked 3-star hotels for multi-day tours</li>
+          <li>Fuel, highway tolls &amp; parking fully covered</li>
+          <li>Itinerary customised to your interests</li>
+        </ul>
+        <div class="info-pills">
+          <span class="pill">Day trips</span>
+          <span class="pill">Multi-day</span>
+          <span class="pill">Custom routes</span>
+        </div>
+        <div class="price-from">Packages from <strong>USD 45</strong> per person</div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section" data-reveal>
+    <div class="why-strip">
+      <div class="why-card">
+        <div class="why-icon">🚗</div>
+        <div class="why-title">Private transport</div>
+        <div class="why-desc">Air-conditioned cars and vans exclusively for your group — no shared buses or strangers.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🧭</div>
+        <div class="why-title">Local expertise</div>
+        <div class="why-desc">Our drivers and guides know Sri Lanka intimately — hidden gems included at no extra cost.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🏨</div>
+        <div class="why-title">3-star comfort</div>
+        <div class="why-desc">All overnight tours include carefully chosen 3-star hotel stays with breakfast.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">✏️</div>
+        <div class="why-title">Fully flexible</div>
+        <div class="why-desc">Start times, stops and pace are all adjusted to suit you — this is your holiday.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOUR PACKAGES -->
+  <section class="section" id="packages" data-reveal>
+    <div class="section-tag">Our packages</div>
+    <h2 class="section-title">Choose your Sri Lankan adventure</h2>
+    <p class="section-sub">Carefully planned itineraries combining iconic landmarks, natural beauty and absolute comfort — all starting from Kottawa.</p>
+
+    <div class="tours-grid">
+
+      <!-- Tour 1 -->
+      <article class="tour-card" data-category="city" data-duration="short" data-price="low">
+        <div class="tour-duration-badge">1 Day</div>
+        <div class="tour-img-wrap">
+          <img src="1.png" alt="Colombo city tour" loading="lazy">
+          <div class="tour-img-overlay"></div>
+        </div>
+        <div class="tour-body">
+          <div class="tour-cat">🏙️ City &amp; Culture</div>
+          <h2 class="tour-name">Colombo &amp; Suburbs Day Tour</h2>
+          <p class="tour-desc">Explore Sri Lanka's vibrant capital — the historic Fort area, bustling Pettah markets, Gangaramaya Temple, Independence Square and the iconic Galle Face Green oceanside promenade.</p>
+          <div class="tour-highlights">
+            <span class="tour-highlight">Gangaramaya Temple</span>
+            <span class="tour-highlight">Galle Face Green</span>
+            <span class="tour-highlight">Pettah Market</span>
+            <span class="tour-highlight">Fort District</span>
+          </div>
+          <div class="tour-footer">
+            <div class="tour-price">From <strong>USD 45</strong> / person</div>
+            <a href="contact.html#booking" class="btn btn-primary" style="padding:7px 16px;font-size:0.8rem">Enquire</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Tour 2 -->
+      <article class="tour-card" data-category="coast" data-duration="short" data-price="low">
+        <div class="tour-duration-badge">1 Day</div>
+        <div class="tour-img-wrap">
+          <img src="2.png" alt="Galle Fort south coast tour" loading="lazy">
+          <div class="tour-img-overlay"></div>
+        </div>
+        <div class="tour-body">
+          <div class="tour-cat">🏖️ Coast &amp; Beach</div>
+          <h2 class="tour-name">Down South Day Tour</h2>
+          <p class="tour-desc">Zip down the Southern Expressway to Galle. Walk the UNESCO-listed Dutch Fort ramparts, visit a sea turtle hatchery and relax on the golden beaches of Hikkaduwa or Unawatuna.</p>
+          <div class="tour-highlights">
+            <span class="tour-highlight">Galle Dutch Fort</span>
+            <span class="tour-highlight">Turtle Hatchery</span>
+            <span class="tour-highlight">Unawatuna Beach</span>
+            <span class="tour-highlight">Hikkaduwa</span>
+          </div>
+          <div class="tour-footer">
+            <div class="tour-price">From <strong>USD 50</strong> / person</div>
+            <a href="contact.html#booking" class="btn btn-primary" style="padding:7px 16px;font-size:0.8rem">Enquire</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Tour 3 -->
+      <article class="tour-card" data-category="nature" data-duration="short" data-price="low">
+        <div class="tour-duration-badge">1 Day</div>
+        <div class="tour-img-wrap">
+          <img src="3.png" alt="Pinnawala Elephant Orphanage" loading="lazy">
+          <div class="tour-img-overlay"></div>
+        </div>
+        <div class="tour-body">
+          <div class="tour-cat">🐘 Wildlife &amp; Nature</div>
+          <h2 class="tour-name">Pinnawala Elephant Orphanage</h2>
+          <p class="tour-desc">A heartwarming day trip perfect for families. Watch baby elephants being bottle-fed and observe the herd march to the river for their famous daily bath amidst lush tropical scenery.</p>
+          <div class="tour-highlights">
+            <span class="tour-highlight">Elephant bathing</span>
+            <span class="tour-highlight">Feeding sessions</span>
+            <span class="tour-highlight">Family friendly</span>
+            <span class="tour-highlight">Lush landscape</span>
+          </div>
+          <div class="tour-footer">
+            <div class="tour-price">From <strong>USD 55</strong> / person</div>
+            <a href="contact.html#booking" class="btn btn-primary" style="padding:7px 16px;font-size:0.8rem">Enquire</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Tour 4 -->
+      <article class="tour-card" data-category="unesco" data-duration="medium" data-price="med">
+        <div class="tour-duration-badge">2 Days</div>
+        <div class="tour-img-wrap">
+          <img src="4.png" alt="Anuradhapura ancient city" loading="lazy">
+          <div class="tour-img-overlay"></div>
+        </div>
+        <div class="tour-body">
+          <div class="tour-cat">🏛️ UNESCO Heritage</div>
+          <h2 class="tour-name">Anuradhapura &amp; Polonnaruwa</h2>
+          <p class="tour-desc">Journey deep into Sri Lanka's Cultural Triangle. Explore ancient ruins, majestic white dagobas and centuries-old irrigation lakes. Includes 1 night at a comfortable 3-star hotel.</p>
+          <div class="tour-highlights">
+            <span class="tour-highlight">Sacred Bo Tree</span>
+            <span class="tour-highlight">Ancient ruins</span>
+            <span class="tour-highlight">1 Night 3★ Hotel</span>
+            <span class="tour-highlight">UNESCO Heritage</span>
+          </div>
+          <div class="tour-footer">
+            <div class="tour-price">From <strong>USD 120</strong> / person</div>
+            <a href="contact.html#booking" class="btn btn-primary" style="padding:7px 16px;font-size:0.8rem">Enquire</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Tour 5 -->
+      <article class="tour-card" data-category="hill" data-duration="medium" data-price="med">
+        <div class="tour-duration-badge">2 Days</div>
+        <div class="tour-img-wrap">
+          <img src="5.png" alt="Kandy Temple of the Tooth" loading="lazy">
+          <div class="tour-img-overlay"></div>
+        </div>
+        <div class="tour-body">
+          <div class="tour-cat">⛰️ Hill Country</div>
+          <h2 class="tour-name">Kandy &amp; Nuwara Eliya</h2>
+          <p class="tour-desc">Head into the misty highlands. Pay respects at the Temple of the Sacred Tooth Relic in Kandy, then wind through cascading waterfalls and emerald tea estates to the charming hill town of Nuwara Eliya.</p>
+          <div class="tour-highlights">
+            <span class="tour-highlight">Tooth Relic Temple</span>
+            <span class="tour-highlight">Tea factory visit</span>
+            <span class="tour-highlight">Waterfalls</span>
+            <span class="tour-highlight">1 Night 3★ Hotel</span>
+          </div>
+          <div class="tour-footer">
+            <div class="tour-price">From <strong>USD 130</strong> / person</div>
+            <a href="contact.html#booking" class="btn btn-primary" style="padding:7px 16px;font-size:0.8rem">Enquire</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Tour 6 -->
+      <article class="tour-card" data-category="north-east" data-duration="long" data-price="high">
+        <div class="tour-duration-badge">3 Days</div>
+        <div class="tour-img-wrap">
+          <img src="6.png" alt="Trincomalee beach Jaffna tour" loading="lazy">
+          <div class="tour-img-overlay"></div>
+        </div>
+        <div class="tour-body">
+          <div class="tour-cat">🌴 North &amp; East Explorer</div>
+          <h2 class="tour-name">Mannar, Jaffna &amp; Trincomalee</h2>
+          <p class="tour-desc">An epic 3-day exploration of Sri Lanka's North and East. Walk historic Jaffna Fort, see the ancient baobab trees of Mannar and unwind on the pristine white-sand beaches of Trincomalee. Includes 2 nights at 3-star hotels.</p>
+          <div class="tour-highlights">
+            <span class="tour-highlight">Jaffna Fort</span>
+            <span class="tour-highlight">Koneswaram Temple</span>
+            <span class="tour-highlight">Trinco Beach</span>
+            <span class="tour-highlight">2 Nights 3★ Hotels</span>
+          </div>
+          <div class="tour-footer">
+            <div class="tour-price">From <strong>USD 195</strong> / person</div>
+            <a href="contact.html#booking" class="btn btn-primary" style="padding:7px 16px;font-size:0.8rem">Enquire</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SAMPLE ITINERARY -->
+  <section class="section" data-reveal>
+    <div class="section-tag">Sample itinerary</div>
+    <h2 class="section-title">A day on the south coast</h2>
+    <p class="section-sub">Here's how a typical one-day tour looks — all timings flexible and adjusted to your preference.</p>
+
+    <div class="itinerary-grid">
+      <div class="itinerary-card">
+        <div class="itinerary-head">
+          <div class="itinerary-day">AM</div>
+          <div>
+            <div class="itinerary-day-title">Morning — Departure &amp; Galle</div>
+            <div class="itinerary-day-sub">Kottawa → Southern Expressway → Galle</div>
+          </div>
+        </div>
+        <div class="itinerary-stops">
+          <div class="itinerary-stop">
+            <div class="stop-time">7:00 AM</div>
+            <div>
+              <div class="stop-name">Pick-up from LP Residence</div>
+              <div class="stop-desc">Your driver arrives at our doorstep in a clean, AC vehicle.</div>
+            </div>
+          </div>
+          <div class="itinerary-stop">
+            <div class="stop-time">8:30 AM</div>
+            <div>
+              <div class="stop-name">Galle Dutch Fort</div>
+              <div class="stop-desc">Walk the UNESCO World Heritage ramparts with panoramic ocean views.</div>
+            </div>
+          </div>
+          <div class="itinerary-stop">
+            <div class="stop-time">10:30 AM</div>
+            <div>
+              <div class="stop-name">Sea Turtle Hatchery</div>
+              <div class="stop-desc">Visit a conservation centre and hold rescued baby sea turtles.</div>
+            </div>
+          </div>
+          <div class="itinerary-stop">
+            <div class="stop-time">12:00 PM</div>
+            <div>
+              <div class="stop-name">Lunch at a seafood restaurant</div>
+              <div class="stop-desc">Fresh catch of the day with a view of the Indian Ocean.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="itinerary-card">
+        <div class="itinerary-head">
+          <div class="itinerary-day">PM</div>
+          <div>
+            <div class="itinerary-day-title">Afternoon — Beach &amp; Return</div>
+            <div class="itinerary-day-sub">Hikkaduwa / Unawatuna → Kottawa</div>
+          </div>
+        </div>
+        <div class="itinerary-stops">
+          <div class="itinerary-stop">
+            <div class="stop-time">1:30 PM</div>
+            <div>
+              <div class="stop-name">Unawatuna or Hikkaduwa Beach</div>
+              <div class="stop-desc">Swim, snorkel or simply relax on golden sand — your choice of beach.</div>
+            </div>
+          </div>
+          <div class="itinerary-stop">
+            <div class="stop-time">3:30 PM</div>
+            <div>
+              <div class="stop-name">Optional coral reef snorkelling</div>
+              <div class="stop-desc">Hikkaduwa's glass-bottom boat or snorkel gear — arranged on request.</div>
+            </div>
+          </div>
+          <div class="itinerary-stop">
+            <div class="stop-time">4:30 PM</div>
+            <div>
+              <div class="stop-name">Departure northbound</div>
+              <div class="stop-desc">Comfortable return drive via the expressway.</div>
+            </div>
+          </div>
+          <div class="itinerary-stop">
+            <div class="stop-time">6:30 PM</div>
+            <div>
+              <div class="stop-name">Drop-off at LP Residence</div>
+              <div class="stop-desc">Back home with a full day of memories.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING NOTE -->
+  <div class="booking-note" data-reveal>
+    <strong>How to book a tour:</strong>
+    <ul>
+      <li>Send an enquiry via the form or WhatsApp with your preferred dates and tour</li>
+      <li>We confirm availability and provide a detailed quote within a few hours</li>
+      <li>A non-refundable USD 10 deposit secures your tour booking</li>
+      <li>Remaining balance payable on the day of the tour</li>
+      <li>All tours can be modified or combined — just ask your host</li>
+    </ul>
+  </div>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner" data-reveal>
+    <div style="position:relative;z-index:1">
+      <div class="section-tag" style="justify-content:center">Ready to explore?</div>
+      <h2>Plan your perfect Sri Lankan tour</h2>
+      <p>Tell us where you want to go and when — we'll handle everything else. Private transport, hotels, guides and more.</p>
+      <div class="cta-btns">
+        <a href="contact.html#booking" class="btn btn-primary">Send a Tour Enquiry</a>
+        <a href="https://wa.me/94775542258" class="btn btn-wa" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+        <a href="explore.html" class="btn btn-outline">Browse Attractions</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- WhatsApp float -->
+<a href="https://wa.me/94775542258" class="wa-float" target="_blank" rel="noopener" title="Chat on WhatsApp">💬</a>
+
+<!-- ── FOOTER ─────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="footer-brand-logo"><img src="Logo.jpg" alt="LP Residence"></div>
+          <div class="footer-brand-name">LP Residence</div>
+        </div>
+        <p class="footer-desc">Family‑run homestay in Kottawa, Sri Lanka. Comfortable rooms from USD 20/night.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="https://wa.me/94775542258" class="social-btn social-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a href="https://www.facebook.com/share/1KzhAytyEe/" class="social-btn social-fb" target="_blank" rel="noopener">f Facebook</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick links</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms &amp; Gallery</a></li>
+          <li><a href="explore.html">Explore Sri Lanka</a></li>
+          <li><a href="tours.html">Tour Packages</a></li>
+          <li><a href="contact.html">Booking &amp; Contact</a></li>
+          <li><a href="contact.html#payment">Pay Deposit</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-item">📍 62/12 Temple Road, Kottawa</div>
+        <div class="footer-contact-item">📞 +94 777 210 775</div>
+        <div class="footer-contact-item">📞 +94 775 542 258</div>
+        <div class="footer-contact-item">✉️ lpresidence.lk@gmail.com</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 LP Residence, Kottawa, Sri Lanka. All rights reserved.</div>
+      <div><a href="https://lpresidence.lk/">lpresidence.lk</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Header scroll
+const header = document.getElementById("header");
+window.addEventListener("scroll", () => header.classList.toggle("scrolled", window.scrollY > 20));
+
+// Hamburger
+const hamburger = document.getElementById("hamburger");
+const mobileNav = document.getElementById("mobileNav");
+hamburger.addEventListener("click", () => { hamburger.classList.toggle("open"); mobileNav.classList.toggle("open"); });
+document.addEventListener("click", e => {
+  if (!hamburger.contains(e.target) && !mobileNav.contains(e.target)) {
+    hamburger.classList.remove("open"); mobileNav.classList.remove("open");
+  }
+});
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries => entries.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); }
+}), { threshold: 0.08 });
+document.querySelectorAll("[data-reveal]").forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

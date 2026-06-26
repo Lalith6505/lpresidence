@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MWW44WR4TY"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MWW44WR4TY');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Booking &amp; Contact – LP Residence Kottawa</title>
+  <meta name="description" content="Book your stay at LP Residence in Kottawa, Sri Lanka. Check availability, pay your deposit securely via PayPal and get in touch with your hosts.">
+  <meta property="og:title" content="Booking &amp; Contact – LP Residence">
+  <meta property="og:image" content="Contact.jpg">
+  <link rel="icon" href="Logo.jpg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .steps { counter-reset: step; display: flex; flex-direction: column; gap: 0; }
+    .step { display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--border); }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      counter-increment: step; flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
+      background: var(--accent); color: #FFFFFF; font-weight: 700; font-size: 0.88rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .step-body h4 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+    .step-body p  { font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+
+    .contact-detail { display: flex; align-items: flex-start; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--border); font-size: 0.92rem; }
+    .contact-detail:last-child { border-bottom: none; }
+    .contact-detail-icon { font-size: 1.2rem; flex-shrink: 0; }
+    .contact-detail-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .contact-detail-val { color: var(--text); line-height: 1.5; }
+    .contact-detail-val a { color: var(--accent); font-weight: 600; }
+    .contact-detail-val a:hover { text-decoration: underline; }
+
+    .qr-wrap { background: var(--bg2); border: 1px solid var(--border2); border-radius: var(--radius); padding: 18px; display: inline-block; margin-top: 12px; text-align: center; }
+    .qr-wrap img { width: 160px; height: 160px; display: block; margin: 0 auto; }
+    .qr-label { font-size: 0.78rem; color: var(--muted); margin-top: 8px; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<header id="header">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-logo"><img src="Logo.jpg" alt="LP Residence"></div>
+      <div>
+        <div class="brand-name">LP Residence</div>
+        <div class="brand-sub">Homestay · Kottawa · Sri Lanka</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rooms.html">Rooms &amp; Gallery</a></li>
+      <li><a href="explore.html">Explore Sri Lanka</a></li>
+      <li><a href="tours.html">Tour Packages</a></li> 
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html#booking">Book Now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="rooms.html">Rooms &amp; Gallery</a>
+  <a href="explore.html">Explore Sri Lanka</a>
+  <a href="tours.html">Tour Packages</a> 
+  <a href="contact.html">Contact</a>
+  <a href="contact.html#booking">Book Now</a>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" style="min-height:340px" data-reveal>
+    <div class="hero-bg" style="background-image:url('Contact.jpg')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content" style="grid-template-columns:1fr">
+      <div>
+        <div class="hero-tag">📩 Bookings &amp; enquiries</div>
+        <h1 class="hero-h1">
+          <span>Book your stay</span><br>
+          at LP Residence
+        </h1>
+        <p class="hero-p">Check availability, send an enquiry or pay your deposit to confirm your room. Your hosts respond within a few hours.</p>
+        <div class="hero-actions">
+          <a href="#booking" class="btn btn-primary">Send Booking Request</a>
+          <a href="#payment" class="btn btn-paypal">Pay Deposit (PayPal)</a>
+          <a href="https://wa.me/94775542258" class="btn btn-wa" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO BOOK -->
+  <section class="section" data-reveal>
+    <div class="section-tag">How it works</div>
+    <h2 class="section-title">Simple 4-step booking</h2>
+    <div class="two-col">
+      <div class="card">
+        <h3>📋 Booking steps</h3>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>Check availability</h4>
+              <p>Fill in the form below or send a WhatsApp message with your check‑in and check‑out dates and number of guests. Your host will confirm availability.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>Receive confirmation</h4>
+              <p>Your host will reply confirming the room type, rate and availability — usually within a few hours.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>Pay deposit (USD 10)</h4>
+              <p>Pay a non‑refundable USD 10 deposit per room via PayPal or QR code scan to secure your booking.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h4>Arrive &amp; pay balance</h4>
+              <p>Check in from 2:00 PM. Pay the remaining balance in cash to your host at LP Residence on arrival.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>ℹ️ Stay information</h3>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">⏰</div>
+          <div>
+            <div class="contact-detail-label">Check‑in / Check‑out</div>
+            <div class="contact-detail-val">Check‑in from <strong>2:00 PM</strong> · Check‑out by <strong>11:00 AM</strong><br>Early or late arrangements possible on request.</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">💰</div>
+          <div>
+            <div class="contact-detail-label">Room rates</div>
+            <div class="contact-detail-val">
+              Queen Double AC — <strong style="color:var(--accent)">USD 25/night</strong><br>
+              Queen Double Non‑AC — <strong style="color:var(--accent)">USD 20/night</strong><br>
+              King Room AC — <strong style="color:var(--accent)">USD 20/night</strong><br>
+              Large Family Room — <strong style="color:var(--accent)">USD 35/night</strong>
+            </div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🍽️</div>
+          <div>
+            <div class="contact-detail-label">Meals</div>
+            <div class="contact-detail-val">Meals are available on request for an additional charge. Please let your host know in advance.</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🚗</div>
+          <div>
+            <div class="contact-detail-label">Airport transfers</div>
+            <div class="contact-detail-val">Pickup and drop‑off at BIA/CMB airport available. Please arrange in advance with your host.</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🐾</div>
+          <div>
+            <div class="contact-detail-label">Pets &amp; smoking</div>
+            <div class="contact-detail-val">No smoking indoors. Please enquire about pets before booking.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING FORM -->
+  <section class="section" id="booking" data-reveal>
+    <div class="section-tag">Enquiry form</div>
+    <h2 class="section-title">Send a booking request</h2>
+    <p class="section-sub">Fill in your details and your host will confirm availability and rates within a few hours.</p>
+
+    <div class="two-col">
+      <div class="card">
+        <h3>📝 Booking enquiry</h3>
+        <form id="bookingForm" action="https://formspree.io/f/xpwzdknz" method="POST">
+          <div class="form-group">
+            <label for="name">Full name *</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address *</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone / WhatsApp</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900">
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div class="form-group">
+              <label for="checkin">Check‑in date *</label>
+              <input type="date" id="checkin" name="checkin" required>
+            </div>
+            <div class="form-group">
+              <label for="checkout">Check‑out date *</label>
+              <input type="date" id="checkout" name="checkout" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="roomtype">Room type</label>
+            <select id="roomtype" name="roomtype">
+              <option value="">— Select a room —</option>
+              <option>Queen Double Room — AC (USD 25/night)</option>
+              <option>Queen Double Room — Non‑AC (USD 20/night)</option>
+              <option>King Room — AC (USD 20/night)</option>
+              <option>Large Family Room (USD 35/night)</option>
+              <option>Not sure — please advise</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="guests">Number of guests *</label>
+            <input type="number" id="guests" name="guests" min="1" max="12" placeholder="e.g. 2" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Special requests or questions</label>
+            <textarea id="message" name="message" placeholder="Airport pickup, early check‑in, dietary needs, etc."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%">Send Booking Request →</button>
+          <div id="formMsg" style="margin-top:12px;font-size:0.88rem;display:none"></div>
+        </form>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <div class="card">
+          <h3>📞 Contact us directly</h3>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📍</div>
+            <div>
+              <div class="contact-detail-label">Address</div>
+              <div class="contact-detail-val">62/12 Temple Road, Kottawa, Sri Lanka</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📞</div>
+            <div>
+              <div class="contact-detail-label">Phone &amp; WhatsApp</div>
+              <div class="contact-detail-val">
+                <a href="tel:+94777210775">+94 777 210 775</a><br>
+                <a href="tel:+94775542258">+94 775 542 258</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">✉️</div>
+            <div>
+              <div class="contact-detail-label">Email</div>
+              <div class="contact-detail-val"><a href="mailto:lpresidence.lk@gmail.com">lpresidence.lk@gmail.com</a></div>
+            </div>
+          </div>
+          <div class="social-row">
+            <a href="https://wa.me/94775542258" class="social-btn" target="_blank" rel="noopener">💬 WhatsApp</a>
+            <a href="https://www.facebook.com/share/1KzhAytyEe/" class="social-btn" target="_blank" rel="noopener">f Facebook</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>🗺️ Find us</h3>
+          <p style="font-size:0.92rem; color:var(--muted)">62/12 Temple Road, Kottawa — close to the Makumbura transport hub and Southern Expressway.</p>
+          <div class="map-wrap">
+            <iframe
+              title="LP Residence location map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.4!2d80.0274!3d6.8365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sKottawa%2C+Sri+Lanka!5e0!3m2!1sen!2slk!4v1"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAYMENT -->
+  <section class="section" id="payment" data-reveal>
+    <div class="section-tag">Secure payment</div>
+    <h2 class="section-title">Pay your booking deposit</h2>
+    <p class="section-sub">A non‑refundable USD 10 deposit per room confirms your booking. Pay securely via PayPal or scan the QR code.</p>
+
+    <div class="two-col">
+      <div class="card">
+        <h3>💳 PayPal — online payment</h3>
+        <p style="font-size:0.95rem; color:var(--text); margin-bottom:12px">Click the button below to pay USD 10 securely via PayPal. You do not need a PayPal account — card payments are accepted.</p>
+        <p style="font-size:0.95rem; color:var(--muted); margin-bottom:20px">Once your payment is complete, please send your booking details (name, dates, room type) via WhatsApp or email so your host can confirm your reservation.</p>
+        <a href="https://www.paypal.com/ncp/payment/CMW4MRZGW6NJL" target="_blank" rel="noopener" class="btn btn-primary" style="background:var(--paypal); color:#FFF; width:100%">
+          🔒 Pay USD 10 Deposit via PayPal
+        </a>
+        <div class="note-box" style="margin-top:20px">
+          <strong>After payment:</strong>
+          <ul>
+            <li>Send payment confirmation + your booking details to your host via WhatsApp or email</li>
+            <li>Receive written booking confirmation from LP Residence</li>
+            <li>Pay the remaining balance in cash at check‑in</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>📱 QR Code payment</h3>
+        <p style="font-size:0.95rem; color:var(--text); margin-bottom:12px">Scan the QR code below with any payment app to pay the USD 10 advance deposit directly.</p>
+        <div class="qr-wrap">
+          <img src="Advance Paymen-qrcode.jpg" alt="Advance Payment QR Code">
+          <div class="qr-label">Scan to pay USD 10 advance deposit</div>
+        </div>
+        <p style="margin-top:16px; font-size:0.92rem; color:var(--muted)">After scanning and completing payment, please contact your host on WhatsApp or email with your name and booking dates to receive confirmation.</p>
+        <div style="margin-top:16px">
+          <a href="https://wa.me/94775542258" class="btn btn-wa" style="width:100%">
+            💬 Send payment confirmation via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" data-reveal>
+    <div class="section-tag">FAQ</div>
+    <h2 class="section-title">Frequently asked questions</h2>
+    <div style="max-width:760px">
+      <div class="faq-list" id="faqList">
+        <div class="faq-item">
+          <button class="faq-q">How do I confirm my booking?<span class="faq-icon">+</span></button>
+          <div class="faq-a">Send your preferred dates and room type via the form above or WhatsApp. Your host will confirm availability. Pay the USD 10 deposit via PayPal or QR scan and send proof of payment to complete the booking.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Is the deposit refundable?<span class="faq-icon">+</span></button>
+          <div class="faq-a">The USD 10 advance deposit is non‑refundable, as it is used to hold your room. The remaining balance is only paid at check‑in and is not charged if you cancel before arrival.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What is included in the room rate?<span class="faq-icon">+</span></button>
+          <div class="faq-a">All rooms include free high‑speed Wi‑Fi, free on‑site parking, daily housekeeping and access to the rooftop garden. Meals can be arranged on request for an additional charge.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can you arrange airport pickup?<span class="faq-icon">+</span></button>
+          <div class="faq-a">Yes — airport transfers to and from Bandaranaike International Airport (BIA/CMB) can be arranged in advance. Please contact your host at least 48 hours before your flight to confirm the transfer.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Are meals available at LP Residence?<span class="faq-icon">+</span></button>
+          <div class="faq-a">Meals including breakfast, lunch and dinner can be arranged on request for an additional charge. Please let your host know in advance so meals can be prepared for you.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What is the check‑in and check‑out time?<span class="faq-icon">+</span></button>
+          <div class="faq-a">Standard check‑in is from 2:00 PM and check‑out is by 11:00 AM. Early check‑in or late check‑out may be possible depending on availability — please request this in advance.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How far is LP Residence from Colombo city centre?<span class="faq-icon">+</span></button>
+          <div class="faq-a">LP Residence is located in Kottawa, approximately 20–30 minutes from central Colombo by car or tuk‑tuk. The Makumbura Multimodal Transport Hub is a short walk away, making public transport connections easy.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Is parking available?<span class="faq-icon">+</span></button>
+          <div class="faq-a">Yes — free on‑site parking is available for all guests. Please mention your vehicle when booking if you need a specific parking space.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<a href="https://wa.me/94775542258" class="wa-float" target="_blank" rel="noopener" title="Chat on WhatsApp">💬</a>
+
+<div class="sticky-bar">
+  <a href="#booking" class="btn btn-primary" style="flex:1;justify-content:center">Book Now</a>
+  <a href="https://wa.me/94775542258" class="btn btn-wa" target="_blank" rel="noopener" style="flex:1;justify-content:center">💬 WhatsApp</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="footer-brand-logo"><img src="Logo.jpg" alt="LP Residence"></div>
+          <div class="footer-brand-name">LP Residence</div>
+        </div>
+        <p class="footer-desc">Family‑run homestay in Kottawa, Sri Lanka. Comfortable rooms from USD 20/night.</p>
+        <div class="social-row">
+          <a href="https://wa.me/94775542258" class="social-btn" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a href="https://www.facebook.com/share/1KzhAytyEe/" class="social-btn" target="_blank" rel="noopener">f Facebook</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick links</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms &amp; Gallery</a></li>
+          <li><a href="explore.html">Explore Sri Lanka</a></li>
+          <li><a href="tours.html">Tour Packages</a></li> 
+          <li><a href="contact.html">Booking &amp; Contact</a></li>
+          <li><a href="contact.html#payment">Pay Deposit</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-item">📍 62/12 Temple Road, Kottawa</div>
+        <div class="footer-contact-item">📞 +94 777 210 775</div>
+        <div class="footer-contact-item">📞 +94 717 702 621</div>
+        <div class="footer-contact-item">✉️ lpresidence.lk@gmail.com</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 LP Residence, Kottawa, Sri Lanka. All rights reserved.</div>
+      <div><a href="https://lpresidence.lk/">lpresidence.lk</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 20));
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileNav.classList.toggle('open'); });
+document.addEventListener('click', e => {
+  if (!hamburger.contains(e.target) && !mobileNav.contains(e.target)) { hamburger.classList.remove('open'); mobileNav.classList.remove('open'); }
+});
+const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.08 });
+document.querySelectorAll('[data-reveal]').forEach(el => obs.observe(el));
+
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item'); const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+const checkin = document.getElementById('checkin');
+const checkout = document.getElementById('checkout');
+const today = new Date().toISOString().split('T')[0];
+checkin.min = today; checkout.min = today;
+checkin.addEventListener('change', () => { if (checkout.value && checkout.value <= checkin.value) checkout.value = ''; checkout.min = checkin.value; });
+
+const form = document.getElementById('bookingForm');
+const formMsg = document.getElementById('formMsg');
+form.addEventListener('submit', async e => {
+  e.preventDefault(); const btn = form.querySelector('button[type="submit"]');
+  btn.textContent = 'Sending…'; btn.disabled = true;
+  try {
+    const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+    if (res.ok) {
+      formMsg.style.display = 'block'; formMsg.style.color = '#198754';
+      formMsg.textContent = '✅ Your enquiry has been sent! Your host will reply within a few hours.';
+      form.reset();
+    } else { throw new Error('Server error'); }
+  } catch {
+    formMsg.style.display = 'block'; formMsg.style.color = '#dc3545';
+    formMsg.textContent = '❌ Could not send. Please contact us directly via WhatsApp or email.';
+  }
+  btn.textContent = 'Send Booking Request →'; btn.disabled = false;
+});
+</script>
+</body>
+</html>

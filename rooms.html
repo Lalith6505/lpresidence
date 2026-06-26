@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MWW44WR4TY"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MWW44WR4TY');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rooms &amp; Gallery – LP Residence Kottawa</title>
+  <meta name="description" content="See LP Residence room types, facilities and prices. Queen, King and Family rooms from USD 20/night in Kottawa, Sri Lanka.">
+  <meta property="og:title" content="Rooms &amp; Gallery – LP Residence">
+  <meta property="og:image" content="rooms.jpg">
+  <link rel="icon" href="Logo.jpg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Ensures the gallery section titles span the full width of the grid and align perfectly above the items */
+    .gallery-section-title {
+      grid-column: 1 / -1;
+      width: 100%;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-top: 24px;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+    }
+    /* Smooth spacing compensation for the first title block */
+    .gallery-section-title:first-child {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+<header id="header">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-logo"><img src="Logo.jpg" alt="LP Residence"></div>
+      <div>
+        <div class="brand-name">LP Residence</div>
+        <div class="brand-sub">Homestay · Kottawa · Sri Lanka</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rooms.html">Rooms &amp; Gallery</a></li>
+      <li><a href="explore.html">Explore Sri Lanka</a></li>
+      <li><a href="tours.html">Tour Packages</a></li> 
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html#booking">Book Now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="rooms.html">Rooms &amp; Gallery</a>
+  <a href="explore.html">Explore Sri Lanka</a>
+  <a href="tours.html">Tour Packages</a> 
+  <a href="contact.html">Contact</a>
+  <a href="contact.html#booking">Book Now</a>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" data-reveal>
+    <div class="hero-bg" style="background-image:url('rooms.jpg')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div>
+        <div class="hero-tag">🛏️ All room types</div>
+        <h1 class="hero-h1">
+          <span>Comfortable rooms</span><br>
+          for every traveller
+        </h1>
+        <p class="hero-p">Queen, King and Family rooms — all clean, well‑furnished and looked after by your hosts. Free Wi‑Fi and parking included with every stay.</p>
+        <div class="hero-badges">
+          <span class="badge badge-green">✓ From USD 20 / night</span>
+          <span class="badge">AC &amp; Non‑AC options</span>
+          <span class="badge">Family rooms up to 6 adults</span>
+        </div>
+        <div class="hero-actions">
+          <a href="contact.html#booking" class="btn btn-primary">Book a Room</a>
+          <a href="#rooms" class="btn btn-outline">View Room Types</a>
+        </div>
+      </div>
+      <aside class="info-card">
+        <div class="info-card-label">Included with every room</div>
+        <div class="info-card-title">Standard inclusions</div>
+        <ul class="info-list">
+          <li>High‑speed Wi‑Fi throughout</li>
+          <li>Free on‑site parking</li>
+          <li>Daily housekeeping</li>
+          <li>Access to rooftop garden</li>
+          <li>Meals available on request</li>
+          <li>Airport transfers on request</li>
+        </ul>
+        <div class="info-price">Check‑in from <strong>2:00 PM</strong> · Check‑out by <strong>11:00 AM</strong></div>
+      </aside>
+    </div>
+  </section>
+
+ <!-- ROOM CARDS -->
+<section class="section" id="rooms" data-reveal>
+  <div class="section-tag">Room types</div>
+  <h2 class="section-title">Choose your room</h2>
+  <p class="section-sub">All rooms are serviced daily and furnished to a comfortable standard. Shared and attached bathrooms available.</p>
+
+  <div class="rooms-grid">
+    <div class="room-card">
+      <img class="room-img" src="images/Bed room 2.jpg" alt="Queen Double Room AC" loading="lazy">
+      <div class="room-body">
+        <div class="room-name">Queen Double Room — AC</div>
+        <div class="room-price">USD 25 <span>/ night</span></div>
+        <p class="room-desc">Two Queen beds with AC and ceiling fans, sharing a spacious bathroom and common living space on the same floor. Comfortably sleeps up to 4 adults.</p>
+        <div class="room-badges">
+          <span class="badge">2 Queen beds</span>
+          <span class="badge">Air conditioning</span>
+          <span class="badge">Up to 4 adults</span>
+          <span class="badge">Shared bathroom</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <img class="room-img" src="images/Bed room 3[1].jpg" alt="Queen Double Room Non-AC" loading="lazy">
+      <div class="room-body">
+        <div class="room-name">Queen Double Room — Non‑AC</div>
+        <div class="room-price">USD 20 <span>/ night</span></div>
+        <p class="room-desc">Two Queen beds with ceiling fans and natural ventilation, sharing a large bathroom. A great value option in a naturally cool residential setting.</p>
+        <div class="room-badges">
+          <span class="badge">2 Queen beds</span>
+          <span class="badge">Ceiling fans</span>
+          <span class="badge">Up to 4 adults</span>
+          <span class="badge">Shared bathroom</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <img class="room-img" src="images/Bed room 5.jpg" alt="King Room AC" loading="lazy">
+      <div class="room-body">
+        <div class="room-name">King Room — AC</div>
+        <div class="room-price">USD 20 <span>/ night</span></div>
+        <p class="room-desc">One King bed with AC and fan, sharing a large bathroom. Great for solo travellers or couples who want a quiet and comfortable private room.</p>
+        <div class="room-badges">
+          <span class="badge">1 King bed</span>
+          <span class="badge">Air conditioning</span>
+          <span class="badge">1–2 adults</span>
+          <span class="badge">Shared bathroom</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="room-card">
+      <img class="room-img" src="images/Bed room 4[1].jpg" alt="Large Family Room" loading="lazy">
+      <div class="room-body">
+        <div class="room-name">Large Family Room</div>
+        <div class="room-price">USD 35 <span>/ night</span></div>
+        <p class="room-desc">Our largest room with two Queen beds, one double and one single bed, an attached bathroom and easy access to the rooftop. Ideal for larger families or groups.</p>
+        <div class="room-badges">
+          <span class="badge">Multiple beds</span>
+          <span class="badge">Attached bathroom</span>
+          <span class="badge">Up to 6 adults</span>
+          <span class="badge badge-green">Rooftop access</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- PRICE TABLE -->
+  <section class="section" data-reveal>
+    <div class="section-tag">Pricing</div>
+    <h2 class="section-title">Room rates at a glance</h2>
+    <p class="section-sub">All rates are per room per night in USD. USD 10 deposit confirms your booking — balance paid at check‑in.</p>
+    <div style="overflow-x:auto;border-radius:var(--radius-lg);border:1px solid var(--border);">
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Room type</th>
+            <th>Description</th>
+            <th>Capacity</th>
+            <th>Rate / night</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color:var(--text)">Queen Double — AC</strong></td>
+            <td>Two Queen beds, AC &amp; fans, shared bathroom &amp; living space</td>
+            <td>Up to 4 adults</td>
+            <td class="price-cell">USD 25</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--text)">Queen Double — Non‑AC</strong></td>
+            <td>Two Queen beds, ceiling fans, shared large bathroom</td>
+            <td>Up to 4 adults</td>
+            <td class="price-cell">USD 20</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--text)">King Room — AC</strong></td>
+            <td>One King bed, AC &amp; fan, shared large bathroom</td>
+            <td>1–2 adults</td>
+            <td class="price-cell">USD 20</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--text)">Large Family Room</strong></td>
+            <td>2 Queen + 1 double + 1 single bed, attached bathroom, rooftop access</td>
+            <td>Up to 6 adults</td>
+            <td class="price-cell">USD 35</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-box" style="margin-top:16px">
+      <strong>Booking note:</strong> A non‑refundable USD 10 deposit per room is required to confirm your booking. 
+      The remaining balance is payable in cash at LP Residence on check‑in. 
+      <a href="contact.html#payment" style="color:var(--accent);text-decoration:underline;">Pay deposit securely online →</a>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" data-reveal>
+    <div class="section-tag">Photo gallery</div>
+    <h2 class="section-title">See LP Residence</h2>
+    <p class="section-sub">From the entrance and garden to bedrooms, bathrooms and the rooftop. Click any photo to view full size.</p>
+
+    <div class="gallery" id="gallery">
+
+      <div class="gallery-section-title">Entrance &amp; outdoor</div>
+      <div class="gallery-item" data-full="images/Entrance.jpg" data-caption="Entrance">
+        <img src="images/Entrance.jpg" alt="Entrance" loading="lazy">
+        <div class="gallery-caption">Entrance</div>
+      </div>
+      <div class="gallery-item" data-full="images/Front door.jpg" data-caption="Front door">
+        <img src="images/Front door.jpg" alt="Front door" loading="lazy">
+        <div class="gallery-caption">Front door</div>
+      </div>
+      <div class="gallery-item" data-full="images/Front garden.jpg" data-caption="Front garden">
+        <img src="images/Front garden.jpg" alt="Front garden" loading="lazy">
+        <div class="gallery-caption">Front garden</div>
+      </div>
+      <div class="gallery-item" data-full="images/Front view.jpg" data-caption="Front view">
+        <img src="images/Front view.jpg" alt="Front view" loading="lazy">
+        <div class="gallery-caption">Front view</div>
+      </div>
+      <div class="gallery-item" data-full="images/Entrance road.jpg" data-caption="Entrance road">
+        <img src="images/Entrance road.jpg" alt="Entrance road" loading="lazy">
+        <div class="gallery-caption">Entrance road</div>
+      </div>
+      <div class="gallery-item" data-full="images/Front view from road.jpg" data-caption="Front view from road">
+        <img src="images/Front view from road.jpg" alt="Front view from road" loading="lazy">
+        <div class="gallery-caption">Front view from road</div>
+      </div>
+      <div class="gallery-item" data-full="images/Entrance from road.jpg" data-caption="Entrance from road">
+        <img src="images/Entrance from road.jpg" alt="Entrance from road" loading="lazy">
+        <div class="gallery-caption">Entrance from road</div>
+      </div>
+      <div class="gallery-item" data-full="images/Front garden at night.jpg" data-caption="Front garden at night">
+        <img src="images/Front garden at night.jpg" alt="Front garden at night" loading="lazy">
+        <div class="gallery-caption">Front garden at night</div>
+      </div>
+
+      <div class="gallery-section-title">Reception &amp; common areas</div>
+      <div class="gallery-item" data-full="images/Reception area.jpg" data-caption="Reception area">
+        <img src="images/Reception area.jpg" alt="Reception area" loading="lazy">
+        <div class="gallery-caption">Reception area</div>
+      </div>
+      <div class="gallery-item" data-full="images/Reception area at night.jpg" data-caption="Reception area at night">
+        <img src="images/Reception area at night.jpg" alt="Reception area at night" loading="lazy">
+        <div class="gallery-caption">Reception area at night</div>
+      </div>
+      <div class="gallery-item" data-full="images/Entrance door from inside.jpg" data-caption="Entrance door from inside">
+        <img src="images/Entrance door from inside.jpg" alt="Entrance door from inside" loading="lazy">
+        <div class="gallery-caption">Entrance door from inside</div>
+      </div>
+      <div class="gallery-item" data-full="images/Inside ground.jpg" data-caption="Inside ground floor">
+        <img src="images/Inside ground.jpg" alt="Inside ground floor" loading="lazy">
+        <div class="gallery-caption">Ground floor</div>
+      </div>
+      <div class="gallery-item" data-full="images/Dining space.jpg" data-caption="Dining space">
+        <img src="images/Dining space.jpg" alt="Dining space" loading="lazy">
+        <div class="gallery-caption">Dining space</div>
+      </div>
+      <div class="gallery-item" data-full="images/Second floor living.jpg" data-caption="Second floor living area">
+        <img src="images/Second floor living.jpg" alt="Second floor living" loading="lazy">
+        <div class="gallery-caption">2nd floor living</div>
+      </div>
+      <div class="gallery-item" data-full="images/Smoking space.jpg" data-caption="Smoking space">
+        <img src="images/Smoking space.jpg" alt="Smoking space" loading="lazy">
+        <div class="gallery-caption">Smoking space</div>
+      </div>
+      <div class="gallery-item" data-full="images/TV space.jpg" data-caption="TV space">
+        <img src="images/TV space.jpg" alt="TV space" loading="lazy">
+        <div class="gallery-caption">TV lounge</div>
+      </div>
+
+      <div class="gallery-section-title">Bedrooms &amp; bathrooms</div>
+      <div class="gallery-item" data-full="images/Bed room 1.jpg" data-caption="Bedroom 1">
+        <img src="images/Bed room 1.jpg" alt="Bedroom 1" loading="lazy">
+        <div class="gallery-caption">Bedroom 1</div>
+      </div>
+      <div class="gallery-item" data-full="images/Bed room 2.jpg" data-caption="Bedroom 2">
+        <img src="images/Bed room 2.jpg" alt="Bedroom 2" loading="lazy">
+        <div class="gallery-caption">Bedroom 2</div>
+      </div>
+      <div class="gallery-item" data-full="images/Bed room 3[1].jpg" data-caption="Bedroom 3 – view 1">
+        <img src="images/Bed room 3[1].jpg" alt="Bedroom 3" loading="lazy">
+        <div class="gallery-caption">Bedroom 3</div>
+      </div>
+      <div class="gallery-item" data-full="images/Bed room 3[2].jpg" data-caption="Bedroom 3 – view 2">
+        <img src="images/Bed room 3[2].jpg" alt="Bedroom 3 view 2" loading="lazy">
+        <div class="gallery-caption">Bedroom 3 (2)</div>
+      </div>
+      <div class="gallery-item" data-full="images/Bed room 4[1].jpg" data-caption="Bedroom 4 – view 1">
+        <img src="images/Bed room 4[1].jpg" alt="Bedroom 4" loading="lazy">
+        <div class="gallery-caption">Bedroom 4</div>
+      </div>
+      <div class="gallery-item" data-full="images/Bed room 4[2].jpg" data-caption="Bedroom 4 – view 2">
+        <img src="images/Bed room 4[2].jpg" alt="Bedroom 4 view 2" loading="lazy">
+        <div class="gallery-caption">Bedroom 4 (2)</div>
+      </div>
+      <div class="gallery-item" data-full="images/Bed room 5.jpg" data-caption="Bedroom 5">
+        <img src="images/Bed room 5.jpg" alt="Bedroom 5" loading="lazy">
+        <div class="gallery-caption">Bedroom 5</div>
+      </div>
+      <div class="gallery-item" data-full="images/Common bath.jpg" data-caption="Common bathroom">
+        <img src="images/Common bath.jpg" alt="Common bathroom" loading="lazy">
+        <div class="gallery-caption">Common bathroom</div>
+      </div>
+      <div class="gallery-item" data-full="images/Attache bath.jpg" data-caption="Attached bathroom">
+        <img src="images/Attache bath.jpg" alt="Attached bathroom" loading="lazy">
+        <div class="gallery-caption">Attached bathroom</div>
+      </div>
+      <div class="gallery-item" data-full="images/King room.jpg" data-caption="King room">
+        <img src="images/King room.jpg" alt="King room" loading="lazy">
+        <div class="gallery-caption">King room</div>
+      </div>
+      <div class="gallery-item" data-full="images/Entrance to queen rooms and common toilet.jpg" data-caption="Entrance to queen rooms and common toilet">
+        <img src="images/Entrance to queen rooms and common toilet.jpg" alt="Entrance to queen rooms and common toilet" loading="lazy">
+        <div class="gallery-caption">Entrance to queen rooms and common toilet</div>
+      </div>
+      <div class="gallery-item" data-full="images/Common wash room.jpg" data-caption="Common wash room">
+        <img src="images/Common wash room.jpg" alt="Common wash room" loading="lazy">
+        <div class="gallery-caption">Common wash room</div>
+      </div>
+
+      <div class="gallery-section-title">Rooftop &amp; garden</div>
+      <div class="gallery-item" data-full="images/Roof top.jpg" data-caption="Rooftop">
+        <img src="images/Roof top.jpg" alt="Rooftop" loading="lazy">
+        <div class="gallery-caption">Rooftop</div>
+      </div>
+      <div class="gallery-item" data-full="images/Roof top garden.jpg" data-caption="Rooftop garden">
+        <img src="images/Roof top garden.jpg" alt="Rooftop garden" loading="lazy">
+        <div class="gallery-caption">Rooftop garden</div>
+      </div>
+      <div class="gallery-item" data-full="images/Rooftop@night.jpg" data-caption="Rooftop at night">
+        <img src="images/Rooftop@night.jpg" alt="Rooftop at night" loading="lazy">
+        <div class="gallery-caption">Rooftop at night</div>
+      </div>
+      <div class="gallery-item" data-full="images/Night view from top.jpg" data-caption="Night view from top">
+        <img src="images/Night view from top.jpg" alt="Night view from top" loading="lazy">
+        <div class="gallery-caption">Night view from top</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <div class="lightbox-close" id="lbClose">✕</div>
+    <button class="lightbox-nav lightbox-prev" id="lbPrev">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lbNext">›</button>
+    <img id="lbImg" src="" alt="">
+    <div class="lightbox-caption" id="lbCaption"></div>
+  </div>
+</div>
+
+<a href="https://wa.me/94775542258" class="wa-float" target="_blank" rel="noopener" title="Chat on WhatsApp">💬</a>
+
+<!-- Mobile sticky -->
+<div class="sticky-bar">
+  <a href="contact.html#booking" class="btn btn-primary" style="flex:1;justify-content:center">Book Now</a>
+  <a href="contact.html#payment" class="btn btn-paypal" style="flex:1;justify-content:center">Pay Deposit</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="footer-brand-logo"><img src="Logo.jpg" alt="LP Residence"></div>
+          <div class="footer-brand-name">LP Residence</div>
+        </div>
+        <p class="footer-desc">Family‑run homestay in Kottawa, Sri Lanka. Comfortable rooms from USD 20/night.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="https://wa.me/94775542258" class="social-btn social-wa" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a href="https://www.facebook.com/share/1KzhAytyEe/" class="social-btn social-fb" target="_blank" rel="noopener">f Facebook</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick links</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms &amp; Gallery</a></li>
+          <li><a href="explore.html">Explore Sri Lanka</a></li>
+          <li><a href="tours.html">Tour Packages</a></li> 
+          <li><a href="contact.html">Booking &amp; Contact</a></li>
+          <li><a href="contact.html#payment">Pay Deposit</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-item">📍 62/12 Temple Road, Kottawa</div>
+        <div class="footer-contact-item">📞 +94 777 210 775</div>
+        <div class="footer-contact-item">📞 +94 775 542 258</div>
+        <div class="footer-contact-item">✉️ lpresidence.lk@gmail.com</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 LP Residence, Kottawa, Sri Lanka.</div>
+      <div><a href="https://lpresidence.lk/">lpresidence.lk</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 20));
+
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileNav.classList.toggle('open'); });
+document.addEventListener('click', e => {
+  if (!hamburger.contains(e.target) && !mobileNav.contains(e.target)) { hamburger.classList.remove('open'); mobileNav.classList.remove('open'); }
+});
+
+// Reveal
+const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.08 });
+document.querySelectorAll('[data-reveal]').forEach(el => obs.observe(el));
+
+// Lightbox with navigation
+const items = [...document.querySelectorAll('.gallery-item')];
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbCaption = document.getElementById('lbCaption');
+let current = 0;
+
+function openLightbox(index) {
+  current = index;
+  const item = items[index];
+  lbImg.src = item.getAttribute('data-full');
+  lbCaption.textContent = item.getAttribute('data-caption') || '';
+  lightbox.classList.add('active');
+}
+function closeLightbox() { lightbox.classList.remove('active'); lbImg.src = ''; }
+function showNext() { openLightbox((current + 1) % items.length); }
+function showPrev() { openLightbox((current - 1 + items.length) % items.length); }
+
+items.forEach((item, i) => item.addEventListener('click', () => openLightbox(i)));
+document.getElementById('lbClose').addEventListener('click', closeLightbox);
+document.getElementById('lbNext').addEventListener('click', showNext);
+document.getElementById('lbPrev').addEventListener('click', showPrev);
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowRight') showNext();
+  if (e.key === 'ArrowLeft') showPrev();
+});
+</script>
+</body>
+</html>
